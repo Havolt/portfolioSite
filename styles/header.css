@@ -10,7 +10,7 @@ body{
 
 #siteHeadLogo{
     color: white;
-    font-size: 3em;
+    font-size: 3.1em;
     font-family: Arial, Helvetica, sans-serif;
     border: 2px solid white;
     display: inline-block;
@@ -20,8 +20,34 @@ body{
 
 #siteHeadLogo:hover{
     cursor: pointer;
-    text-shadow: 3px 0 3px #646568;
-    box-shadow: 3px 0 3px #646568;
+    text-shadow: 0 0 2px white;
+    box-shadow: 0 0 4px white;
+}
+
+#siteHeadLinks{
+    
+    list-style: none;
+    text-align: right;
+    display: inline-block;
+    float: right;
+    margin: 54px 12px;;
+}
+
+#siteHeadLinks > li{
+    display: inline-block;
+    font-size: 1.7em;
+    margin-right: 18px;
+    text-align: center;
+    color: #e0eafc;
+}
+
+#siteHeadLinks > li:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.siteHeadLinksCurrent{
+    border-bottom: 2px solid white;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 479px){ ... }
@@ -32,7 +58,6 @@ body{
 
 @media only screen and (min-width: 1024px){ 
     #siteHead{
-        background: green;
         margin: 0 auto;
         width: 1024px;
         height: 105px;
