@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+}
+
+#head{
+    width: 100%;
+    height: 105px;
+    background: #4065a0;
+}
+
+#siteHeadLogo{
+    color: white;
+    font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid white;
+    display: inline-block;
+    padding: 8px 4px;
+    margin: 12px 4px;
+}
+
+#siteHeadLogo:hover{
+    cursor: pointer;
+    text-shadow: 3px 0 3px #646568;
+    box-shadow: 3px 0 3px #646568;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px){ ... }
+
+@media only screen and (min-width: 480px) and (max-width: 767px){ ... }
+
+@media only screen and (min-width: 768px) and (max-width: 991px){ ... }
+
+@media only screen and (min-width: 1024px){ 
+    #siteHead{
+        background: green;
+        margin: 0 auto;
+        width: 1024px;
+        height: 105px;
+    }
+ }
