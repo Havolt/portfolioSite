@@ -15,7 +15,7 @@ body{
     border: 2px solid white;
     display: inline-block;
     padding: 8px 4px;
-    margin: 12px 4px;
+    margin: 12px 8px;
 }
 
 #siteHeadLogo:hover{
@@ -24,67 +24,83 @@ body{
     box-shadow: 0 0 4px white;
 }
 
-#siteHeadLinks{
-    
-    list-style: none;
-    text-align: right;
-    display: inline-block;
-    float: right;
-    margin: 54px 12px;
-    padding-left: 0;
-}
+
 
 #siteHeadNav{
     display: none;
 }
 
-#siteHeadLinks > li{
-    display: inline-block;
-    font-size: 1.7em;
-    margin-right: 18px;
-    text-align: center;
-    color: #e0eafc;
-}
 
-#siteHeadLinks > li:hover{
-    cursor: pointer;
-    color: white;
-}
 
-.siteHeadLinksCurrent{
-    border-bottom: 2px solid white;
-}
 
-@media only screen and (min-width: 320px) and (max-width: 479px){ ... }
-
-@media only screen and (min-width: 480px) and (max-width: 767px){ 
+@media only screen and (min-width: 150px) and (max-width: 767px){ 
     
-    #siteHeadLinks{
+    #siteHead > ul{
         display: none;
     }
 
     #siteHeadNav{
-        font-size: 2.9em;
+        font-size: 3.2em;
         border-radius: 2px;
         display: inline-block;
         float: right;
         color: white;
-        padding: 2px 10px;
-        margin-top: 15px;
+        padding: 2px 17px;
+        margin-top: 12px;
+        user-select: none;
     }
     
     #siteHeadNav:hover{
         color: #1e2a3d;
         cursor: pointer;
     }
+
+    .siteHeadNavOn{
+        text-shadow: 1px 2px 2px rgb(36, 36, 36);
+    }
+
+    .menu-open > ul{
+        display: block;
+    }
  }
 
-@media only screen and (min-width: 768px) and (max-width: 991px){ ... }
+@media only screen and (min-width: 768px) {
+    #siteHeadLinks{
+        
+        list-style: none;
+        text-align: right;
+        display: inline-block;
+        float: right;
+        margin: 54px 12px;
+        padding-left: 0;
+    }
+
+    #siteHeadLinks > li{
+        display: inline-block;
+        font-size: 1.7em;
+        margin-right: 18px;
+        text-align: center;
+        color: #e0eafc;
+    }
+    
+    #siteHeadLinks > li:hover{
+        cursor: pointer;
+        color: white;
+    }
+    
+    .siteHeadLinksCurrent{
+        border-bottom: 2px solid white;
+    }
+ }
 
 @media only screen and (min-width: 1024px){ 
+
+
     #siteHead{
         margin: 0 auto;
         width: 1024px;
         height: 105px;
     }
+
+
  }

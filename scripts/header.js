@@ -1,6 +1,7 @@
 const site = document.getElementById('site');
 const head = document.getElementById('head');
 const linkList = ['Home', 'Portfolio', 'About', 'Contact']
+let navOn = false;
 
 function createHead(){
     //Header Container
@@ -41,6 +42,19 @@ function createHead(){
     const navButton = document.createElement('div');
     navButton.id= "siteHeadNav";
     navButton.innerHTML = '	&#9776';
+    navButton.addEventListener('click', function(){
+        if(navOn){
+            console.log('sure');
+            navButton.classList = '';
+            headDiv.classList.remove('menu-open');
+            
+        }else{
+            console.log('not sure');
+            navButton.classList += 'siteHeadNavOn';
+            headDiv.classList.add('menu-open');
+        }
+        navOn = !navOn;
+    })
     headDiv.appendChild(navButton);
 }
 
