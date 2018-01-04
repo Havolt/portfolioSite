@@ -34,7 +34,9 @@ body{
     padding-left: 0;
 }
 
-
+#siteHeadNav{
+    display: none;
+}
 
 #siteHeadLinks > li{
     display: inline-block;

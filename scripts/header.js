@@ -17,8 +17,21 @@ function createHead(){
     headLinks.id="siteHeadLinks";
     for(var i = 0; i < linkList.length; i++){
         const tempList = document.createElement('li');
-        if(i == 1){
+        //Adds border bottom effect to current section user is in
+        if(linkList[i].toLocaleLowerCase() == currSection){
             tempList.classList += 'siteHeadLinksCurrent';
+            
+        }
+        const intSave = i;
+        //Adds event listner to links to open new pages
+        tempList.addEventListener('click', function(){evtAdd(intSave)})
+        //Creates link data
+        function evtAdd(itm){
+            if(linkList[intSave] == 'Home'){
+                window.open('index.html', '_self');
+            }else{
+                window.open(linkList[intSave].toLowerCase() + '.html', '_self');
+            }
         }
         tempList.innerHTML = linkList[i];
         headLinks.appendChild(tempList);
@@ -30,6 +43,7 @@ function createHead(){
     navButton.innerHTML = '	&#9776';
     headDiv.appendChild(navButton);
 }
+
 
 
 (function initHeader(){
