@@ -23,6 +23,9 @@ function createHead(){
             tempList.classList += 'siteHeadLinksCurrent';
             
         }
+        else{
+            tempList.classList += 'siteHeadLinksOther';
+        }
         const intSave = i;
         //Adds event listner to links to open new pages
         tempList.addEventListener('click', function(){evtAdd(intSave)})
@@ -37,7 +40,7 @@ function createHead(){
         tempList.innerHTML = linkList[i];
         headLinks.appendChild(tempList);
     }
-    headDiv.appendChild(headLinks);
+    
     //NavButton
     const navButton = document.createElement('div');
     navButton.id= "siteHeadNav";
@@ -47,15 +50,20 @@ function createHead(){
             console.log('sure');
             navButton.classList = '';
             headDiv.classList.remove('menu-open');
-            
+            headLinks.classList.remove('link-open');
+            headLinks.classList.add('link-closed');
         }else{
             console.log('not sure');
             navButton.classList += 'siteHeadNavOn';
             headDiv.classList.add('menu-open');
+            headLinks.classList.add('link-open');
+            headLinks.classList.remove('link-closed');
         }
         navOn = !navOn;
     })
+    headLinks.classList.add('link-closed');
     headDiv.appendChild(navButton);
+    headDiv.appendChild(headLinks);
 }
 
 

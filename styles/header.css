@@ -14,7 +14,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     border: 2px solid white;
     display: inline-block;
-    padding: 8px 4px;
+    padding: 9px 5px;
     margin: 12px 8px;
 }
 
@@ -35,9 +35,6 @@ body{
 
 @media only screen and (min-width: 150px) and (max-width: 767px){ 
     
-    #siteHead > ul{
-        display: none;
-    }
 
     #siteHeadNav{
         font-size: 3.2em;
@@ -59,8 +56,40 @@ body{
         text-shadow: 1px 2px 2px rgb(36, 36, 36);
     }
 
-    .menu-open > ul{
+    .link-open{
         display: block;
+        list-style: none;
+        font-size: 1.4em;
+        padding-left: 0;
+        text-align: center;
+        margin: 0;
+    }
+
+    .link-closed{
+        display: none;
+    }
+    .siteHeadLinksOther{
+        padding: 6px 0px;
+        background: black;
+        color: #bababa;
+        border-bottom: 1px solid #4f4f4f;
+    }
+
+    .siteHeadLinksOther:hover{
+        cursor: pointer;
+        color: white;
+    }
+
+    .siteHeadLinksCurrent{
+        padding: 6px 0px;
+        background: rgb(136, 136, 136);
+        color: #0a0a0a;
+        border-bottom: 1px solid #4f4f4f;
+    }
+
+    .siteHeadLinksCurrent:hover{
+        cursor: pointer;
+        color: white;
     }
  }
 
