@@ -15,7 +15,6 @@ function createHead(){
     //Head Links
     const headLinks = document.createElement('ul');
     headLinks.id="siteHeadLinks";
-
     for(var i = 0; i < linkList.length; i++){
         const tempList = document.createElement('li');
         if(i == 1){
@@ -24,8 +23,12 @@ function createHead(){
         tempList.innerHTML = linkList[i];
         headLinks.appendChild(tempList);
     }
-
     headDiv.appendChild(headLinks);
+    //NavButton
+    const navButton = document.createElement('div');
+    navButton.id= "siteHeadNav";
+    navButton.innerHTML = '	&#9776';
+    headDiv.appendChild(navButton);
 }
 
 
