@@ -1,5 +1,4 @@
-const site = document.getElementById('site');
-const head = document.getElementById('head');
+
 const linkList = ['Home', 'Portfolio', 'About', 'Contact']
 let navOn = false;
 
@@ -52,12 +51,15 @@ function createHead(){
             headDiv.classList.remove('menu-open');
             headLinks.classList.remove('link-open');
             headLinks.classList.add('link-closed');
+            head.style.height="105px";
         }else{
             console.log('not sure');
             navButton.classList += 'siteHeadNavOn';
             headDiv.classList.add('menu-open');
             headLinks.classList.add('link-open');
             headLinks.classList.remove('link-closed');
+            head.style.height="261px";
+            
         }
         navOn = !navOn;
     })
