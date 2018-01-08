@@ -1,3 +1,8 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 .bioDiv{
     text-align: center;
     font-size: 1.6em;
@@ -10,14 +15,27 @@
     color: #5a5959
 }
 
+#main{
+    height: auto;
+    margin: 0 0 80px 0 ;
+}
+
+.homeMainImg{
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    max-width: 95%;
+    height: auto;
+}
+
 
 @media only screen and (min-width: 1024px){ 
     
     
         #main{
             margin: 0 auto;
+            margin-bottom: 80px;
             width: 1024px;
-            height: 105px;
         }
     
     

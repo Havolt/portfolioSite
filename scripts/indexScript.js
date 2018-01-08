@@ -8,6 +8,14 @@ function homeBio(){
     main.appendChild(bioDiv);
 }
 
+function bigImg(){
+    const myImg = document.createElement('img');
+    myImg.classList.add('homeMainImg');
+    myImg.src="images/mountain.jpg";
+    main.appendChild(myImg);
+}
+
 (function initMain(){
     homeBio();
+    bigImg();
 })()

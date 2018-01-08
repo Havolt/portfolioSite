@@ -1,5 +1,7 @@
 #foot{
-    position:absolute;
+    position: absolute;
+    left: 0;
+    overflow:hidden;
     bottom:0;
     background:#444444;
     width:100%;
