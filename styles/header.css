@@ -93,7 +93,16 @@ body{
     }
  }
 
+@media only screen and (min-width: 770px) and (max-width: 1035px) {
+    #siteHeadLogo{
+        margin-left: 20px;
+    }
+ }
+
 @media only screen and (min-width: 768px) {
+
+
+
     #siteHeadLinks{
         
         list-style: none;
@@ -121,6 +130,13 @@ body{
         border-bottom: 2px solid white;
     }
  }
+
+ @media only screen and (max-width: 200px){
+    #siteHeadNav{
+        font-size: 3em;
+        position: absolute;
+    }
+  }
 
 @media only screen and (min-width: 1024px){ 
 
