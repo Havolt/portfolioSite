@@ -70,3 +70,32 @@
     background: rgb(240, 240, 240);
      cursor: pointer;
  }
+
+ .linkContain{
+     margin: 0 auto;
+     display: table;
+ }
+
+ .footLink{
+     display: inline-block;
+     margin: 0;
+     margin-right: 34px;
+     font-size: 1.3em;
+     color: #e2e2e2;
+ }
+
+ .footLink:hover{
+     color: white;
+     cursor: pointer;
+ }
+
+ .footLinkActive{
+     border-bottom: 2px dashed #5378b2;
+ }
+
+ @media only screen and (max-width: 380px){
+     .footLink{
+         font-size: 1em;
+         margin-right: 10px;
+     }
+  }

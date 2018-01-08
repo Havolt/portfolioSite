@@ -1,5 +1,5 @@
 
-const linkList = ['Home', 'Portfolio', 'About', 'Contact']
+
 let navOn = false;
 
 function createHead(){

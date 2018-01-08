@@ -33,6 +33,37 @@ function addIcons(){
     iconContain.appendChild(facebookIcon);
 }
 
+//Function that creates footer links 
+function addLinks(){
+
+    //Link Container
+    const linkContain = document.createElement('div');
+    linkContain.classList.add('linkContain');
+    foot.appendChild(linkContain);
+
+    //Link maker
+    for(var i = 0; i < linkList.length; i++){
+        const currLink = document.createElement('p');
+        currLink.classList += 'footLink';
+        if(currSection == linkList[i].toLowerCase()){
+            currLink.classList.add('footLinkActive');
+        }
+        currLink.innerHTML = linkList[i];
+        const tmpI = i;
+        currLink.addEventListener('click', function(){
+            if(linkList[tmpI] == 'Home'){
+                window.open('index.html', '_self');
+            }
+            else{
+                window.open(linkList[tmpI] + '.html', '_self');
+            }
+            
+        })
+        linkContain.appendChild(currLink);
+    }
+}
+
 (function initFooter(){
     addIcons();
+    addLinks();
 })()
