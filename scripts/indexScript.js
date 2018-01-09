@@ -11,7 +11,7 @@ function homeBio(){
 function bigImg(){
     //Image container
     const imgHold = document.createElement('div');
-    imgHold.classList.add('homeMainImgContain');
+    imgHold.classList.add('homeMainImgContain', 'homeContain');
     main.appendChild(imgHold);
 
     //Main Image
@@ -34,9 +34,33 @@ function bigImg(){
         window.open('portfolio.html', '_self');
     })
     imgHold.appendChild(imgButton);
+
+}
+
+function abtSection(){
+
+    abtTextHTML = "If you are interested in learning a little bit about my education and myself as a person then you should check out my about section."
+
+    //About Container
+    const abtHold = document.createElement('div');
+    abtHold.classList.add('homeAbtContain', 'homeContain');
+    main.appendChild(abtHold);
+
+    //About Icon
+    const abtIcon = document.createElement('div');
+    abtIcon.classList.add('homeAbtIcon');
+    abtIcon.innerHTML = '<i class="fa fa-id-card"></i>'
+    abtHold.appendChild(abtIcon);
+
+    //About Text
+    const abtText = document.createElement('div');
+    abtText.innerHTML= abtTextHTML;
+    abtText.classList.add('homeAbtText');
+    abtHold.appendChild(abtText);
 }
 
 (function initMain(){
     homeBio();
     bigImg();
+    abtSection();
 })()
