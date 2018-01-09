@@ -23,8 +23,17 @@ function bigImg(){
     //Image Text
     const imgTxt = document.createElement('h2');
     imgTxt.classList.add('homeMainImgTxt');
-    imgTxt.innerHTML="Check out my JavaScript portfolio"
+    imgTxt.innerHTML="Interested in seeing my projects?"
     imgHold.appendChild(imgTxt);
+
+    //Image Portfolio Button
+    const imgButton = document.createElement('button');
+    imgButton.classList.add('homeMainImgButton');
+    imgButton.innerHTML='View Portfolio';
+    imgButton.addEventListener('click', function(){
+        window.open('portfolio.html', '_self');
+    })
+    imgHold.appendChild(imgButton);
 }
 
 (function initMain(){
