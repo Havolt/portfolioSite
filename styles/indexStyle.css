@@ -5,6 +5,7 @@ html {
 
 .bioDiv{
     text-align: center;
+    position: relative;
     font-size: 1.6em;
     margin-left: auto;
     margin-right: auto;
@@ -12,20 +13,36 @@ html {
     border-bottom: 1px solid #d8d8d8;
     padding-bottom: 18px;
     width: 85%;
-    color: #5a5959
+    color: #5a5959;
 }
 
 #main{
     height: auto;
-    margin: 0 0 80px 0 ;
+    position: relative;
+    margin: 0 0 80px 0;
 }
 
-.homeMainImg{
+.homeMainImgContain{
     display: block;
     margin: 0 auto;
     margin-top: 20px;
-    max-width: 95%;
+    width: 95%;
     height: auto;
+    overflow-x: hidden;
+}
+
+.homeMainImg{
+    width: auto;
+    height: 450px;
+}
+
+.homeMainImgTxt{
+    color: #f7f7f7;
+    text-shadow: 1px 1px 2px #5a5959;
+    font-size: 2.4em;
+    position: absolute;
+    top: 250px;
+    left: 50px;
 }
 
 

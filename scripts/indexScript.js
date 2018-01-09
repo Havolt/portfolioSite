@@ -9,10 +9,22 @@ function homeBio(){
 }
 
 function bigImg(){
+    //Image container
+    const imgHold = document.createElement('div');
+    imgHold.classList.add('homeMainImgContain');
+    main.appendChild(imgHold);
+
+    //Main Image
     const myImg = document.createElement('img');
     myImg.classList.add('homeMainImg');
     myImg.src="images/mountain.jpg";
-    main.appendChild(myImg);
+    imgHold.appendChild(myImg);
+
+    //Image Text
+    const imgTxt = document.createElement('h2');
+    imgTxt.classList.add('homeMainImgTxt');
+    imgTxt.innerHTML="Check out my JavaScript portfolio"
+    imgHold.appendChild(imgTxt);
 }
 
 (function initMain(){
