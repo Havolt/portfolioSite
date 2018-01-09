@@ -52,11 +52,26 @@ function abtSection(){
     abtIcon.innerHTML = '<i class="fa fa-id-card"></i>'
     abtHold.appendChild(abtIcon);
 
+    //About Title
+    const abtTitle = document.createElement('h2');
+    abtTitle.classList.add('homeAbtTitle');
+    abtTitle.innerHTML= 'About Me';
+    abtHold.appendChild(abtTitle);
+
     //About Text
     const abtText = document.createElement('div');
     abtText.innerHTML= abtTextHTML;
     abtText.classList.add('homeAbtText');
     abtHold.appendChild(abtText);
+
+    //About Button
+    const abtButton = document.createElement('button');
+    abtButton.classList.add('homeAbtButton');
+    abtButton.innerHTML = 'View About';
+    abtButton.addEventListener('click', function(){
+        window.open('about.html', '_self');
+    })
+    abtHold.appendChild(abtButton);
 }
 
 (function initMain(){
