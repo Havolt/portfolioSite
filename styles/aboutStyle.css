@@ -1,0 +1,18 @@
+#main{
+    width: 100%;
+}
+
+.abtMePic{
+    border-radius:10px;
+    height: 280px;
+}
+
+@media only screen and (min-width: 1024px){ 
+    
+    
+    #main{
+        margin: 0 auto;
+        margin-bottom: 80px;
+        width: 1024px;
+    }
+}
