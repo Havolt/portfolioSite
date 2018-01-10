@@ -6,3 +6,9 @@ body, html{
 #main{
     padding-bottom: 120px;
 }
+
+@media only screen and (max-width: 350px){
+    #main{
+        padding-bottom: 210px;
+    }
+}
