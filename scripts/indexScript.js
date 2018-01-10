@@ -39,39 +39,54 @@ function bigImg(){
 
 function abtSection(){
 
+
+    const buttonList =[
+        {title: 'About',
+        icon: '<i class="fa fa-id-card"></i>',
+        text: "If you are interested in learning a little bit about my education and myself as a person then you should check out my about section."},
+        {title: 'Contact',
+        icon: '<i class="fa fa-envelope"></i>',
+        text: "If you wish to get in contact with me for potential JavaScript collaberations or other reasons then you should check out my contact section."}
+    ]
     abtTextHTML = "If you are interested in learning a little bit about my education and myself as a person then you should check out my about section."
 
+    for(var i = 0; i < buttonList.length; i++){
+        console.log(i);
     //About Container
-    const abtHold = document.createElement('div');
-    abtHold.classList.add('homeAbtContain', 'homeContain');
-    main.appendChild(abtHold);
+    const newHold = document.createElement('div');
+    newHold.classList.add('homeAbtContain', 'homeContain');
+    main.appendChild(newHold);
 
     //About Icon
-    const abtIcon = document.createElement('div');
-    abtIcon.classList.add('homeAbtIcon');
-    abtIcon.innerHTML = '<i class="fa fa-id-card"></i>'
-    abtHold.appendChild(abtIcon);
+    const newIcon = document.createElement('div');
+    newIcon.classList.add('homeAbtIcon');
+    newIcon.innerHTML = buttonList[i].icon;
+    newHold.appendChild(newIcon);
 
     //About Title
-    const abtTitle = document.createElement('h2');
-    abtTitle.classList.add('homeAbtTitle');
-    abtTitle.innerHTML= 'About Me';
-    abtHold.appendChild(abtTitle);
+    const newTitle = document.createElement('h2');
+    newTitle.classList.add('homeAbtTitle');
+    newTitle.innerHTML= buttonList[i].title +' Me';
+    newHold.appendChild(newTitle);
 
     //About Text
-    const abtText = document.createElement('div');
-    abtText.innerHTML= abtTextHTML;
-    abtText.classList.add('homeAbtText');
-    abtHold.appendChild(abtText);
+    const newText = document.createElement('div');
+    newText.innerHTML= buttonList[i].text;
+    newText.classList.add('homeAbtText');
+    newHold.appendChild(newText);
 
-    //About Button
-    const abtButton = document.createElement('button');
-    abtButton.classList.add('homeAbtButton');
-    abtButton.innerHTML = 'View About';
-    abtButton.addEventListener('click', function(){
-        window.open('about.html', '_self');
-    })
-    abtHold.appendChild(abtButton);
+
+
+    //About & Contact Buttons
+        const newButton = document.createElement('button');
+        newButton.classList.add('homeAbtButton');
+        newButton.innerHTML = 'View ' + buttonList[i].title;
+        newButton.addEventListener('click', function(){
+            window.open(buttonList[i].title.toLowerCase() + '.html', '_self');
+        })
+        newHold.appendChild(newButton);
+    }
+
 }
 
 (function initMain(){
