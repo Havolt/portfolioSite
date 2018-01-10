@@ -72,7 +72,7 @@ function abtSection(list){
     //About Title
     const newTitle = document.createElement('h2');
     newTitle.classList.add('homeAbtTitle');
-    newTitle.innerHTML= list[i].title +' Me';
+    newTitle.innerHTML= list[i].title +' me';
     newHold.appendChild(newTitle);
 
     //About Text
