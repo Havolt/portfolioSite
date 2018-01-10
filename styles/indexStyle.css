@@ -72,12 +72,23 @@ button:focus{
     background: #ff9814;
 }
 
+.homeButtonContain{
+    width: 95%;
+    margin: 40px auto;
+    text-align: center;
+}
+
 .homeAbtContain{
-    margin-top: 40px;
-    width: 300px;
+    display: inline-block;
+    width: 350px;
+    height: 320px;
     border: 1px solid #4065A0;
     padding: 30px 0;
     border-radius: 10px;
+    vertical-align: top;
+    margin-left: 5%;
+    margin-right: 5%;
+
 }
 
 .homeAbtIcon{
@@ -112,8 +123,9 @@ button:focus{
     background: #ffa332;
     text-shadow: 1px 1px 2px #5a5959;
     color:white;
-    position: relative;
-    left: 44%;
+    position: absolute;
+    right: 6%;
+    bottom: 5%;
 }
 
 .homeAbtButton:hover{
