@@ -1,29 +1,15 @@
 body, html{
+    min-height: 100%;
     background: #f7f7f7;
     font-family: Arial, Helvetica, sans-serif;
-    position: relative;
-    min-height: 100%;
-    overflow-x: hidden; 
+    overflow-x: hidden;
+    margin: 0;
 }
 
+#site{
+    position: relative;
+}
 
 #main{
     padding-bottom: 120px;
-}
-
-
-
-@media only screen and (max-width: 350px){
-    #main{
-        padding-bottom: 210px;
-    }
-}
-
-@media only screen and (min-width: 1024px){ 
-    
-    #main{
-        margin: 0 auto;
-        margin-bottom: 80px;
-        width: 1024px;
-    }
 }

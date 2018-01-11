@@ -293,13 +293,11 @@ button:focus{
     
         #main{
             margin: 0 auto;
-            margin-bottom: 80px;
+            
             width: 1024px;
         }
 
         .homeMainImgTxt{
             font-size: 2.8em;
         }
-    
-    
      }
