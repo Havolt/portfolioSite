@@ -9,6 +9,8 @@ function creBaseEl(elType, elID, appendee, innHTML, srce){
     else{appendee.appendChild(newSec);}
 }
 
+const sitePages = ['Home', 'Portfolio', 'About', 'Contact'];
+
 //Array containing info for creBaseEl function
 const baseInfo = [
     {type: 'div', id: 'site', appendee: document.body},
