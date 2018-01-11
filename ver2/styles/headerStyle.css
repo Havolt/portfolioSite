@@ -7,6 +7,7 @@
     background: #4065a0;
     width: 100%;
     height: 110px;
+    position: relative;
 }
 
 .headContainer{
@@ -27,11 +28,20 @@
     box-shadow: 0 0 4px white;
 }
 
-@media only screen and (min-width: 1025px){
+.headLinkUl{
+    list-style: none;
+}
+
+.headLinkLi{
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 1024px){
     .headContainer{
         width: 1024px;
         margin: 0 auto;
         background: green;
+        position: relative;
     }
 
     .headTitle{
@@ -40,5 +50,26 @@
         padding: 9px 5px;
         display: inline-block;
         margin-top: 12px;
+        margin-left: 6px;
     }
+
+    .headLinkUl{
+        display: inline-table;
+        position: absolute;
+        right: 0;
+        bottom: 16px;
+        margin-right: 10px;
+    }
+
+    .headLinkLi{
+        display: inline-table;
+        font-size: 30px;
+        margin-right: 14px;
+        color: white;
+    }
+
+    .headLinkLiCurrent{
+        border-bottom: 2px solid white;
+    }
+
  }
