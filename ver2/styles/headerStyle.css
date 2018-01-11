@@ -10,6 +10,35 @@
 }
 
 .headContainer{
-    height: 140px;
-    background: 
+    height: 110px;
 }
+
+.headTitle{
+    color: white;
+    font-size: 52px;
+    border: 2px solid white;
+    padding: 9px 5px;
+    display: inline-block;
+}
+
+.headTitle:hover{
+    cursor: pointer;
+    text-shadow: 0 0 2px white;
+    box-shadow: 0 0 4px white;
+}
+
+@media only screen and (min-width: 1025px){
+    .headContainer{
+        width: 1024px;
+        margin: 0 auto;
+        background: green;
+    }
+
+    .headTitle{
+        font-size: 52px;
+        border: 2px solid white;
+        padding: 9px 5px;
+        display: inline-block;
+        margin-top: 12px;
+    }
+ }
