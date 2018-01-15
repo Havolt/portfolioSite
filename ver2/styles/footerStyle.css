@@ -10,12 +10,57 @@
 
 @media only screen and (min-width: 1024px){
     .footIconContain{
-        width: 100%;
+        margin-top: 4px;
+        width: 264px;
         text-align: center;
+        display: flex;
+        margin: 5px auto;
     }
 
     .footIcon{
-        display: inline-block;
-        font-size: 2em;
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 0px 24px;
+    }
+
+    .footIcon:hover{
+        cursor: pointer;
+        background: white;
+    }
+
+    .gitIcon{
+        background: black;
+        color: white;
+        font-size: 2.2em;
+    }
+
+    .gitIcon:hover{
+        color: black;
+    }
+
+    .twitterIcon{
+        background: #1DA1F2;
+        color: white;
+        height: 36px;
+        padding-top: 4px;
+        font-size: 1.8em;
+    }
+
+    .twitterIcon:hover{
+        color: #1DA1F2;
+    }
+
+    .facebookIcon{
+        background: #4267B2;
+        color: white;
+        height: 36px;
+        padding-top: 4px;
+        font-size: 1.8em;
+    }
+
+    .facebookIcon:hover{
+        color: #4267B2;
     }
 }
