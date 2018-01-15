@@ -36,6 +36,8 @@
     cursor: pointer;
 }
 
+
+
 @media only screen and (min-width: 1024px){
     .headContainer{
         width: 1024px;
@@ -72,4 +74,32 @@
         border-bottom: 2px solid white;
     }
 
+    .headNavButton{
+        display: none
+    }
+
+ }
+
+ @media only screen and (max-width: 768px){
+     .headNavButton{
+         font-size: 3.5em;
+         position: absolute;
+         right: 14px;
+         color: white;
+         top: 14px;
+         user-select: none;
+     }
+
+     .headNavButton{
+         cursor: pointer;
+     }
+
+     .headLinkLi{
+         display: none;
+     }
+
+     .headTitle{
+         margin-top: 12px;
+         margin-left: 6px;
+     }
  }

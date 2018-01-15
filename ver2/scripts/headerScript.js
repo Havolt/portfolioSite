@@ -4,6 +4,7 @@ const headContainObj = {type: 'div', class: 'headContainer', apnd: head};
 const headTitleObj = {type: 'div', class: 'headTitle', apnd: "document.getElementsByClassName('headContainer')[0]", inHL : "MF", hrf: 'index.html', onSelf: true };
 const headBaseLinkObj = {type: 'ul', class: 'headLinkUl', apnd: "document.getElementsByClassName('headContainer')[0]"}
 const headLinksObj = []
+const headNavBut = {type: 'div', class: 'headNavButton', apnd: "document.getElementsByClassName('headContainer')[0]", inHL: '&#9776;' }
 
 //Creates initial container div
 function buildHead(ob){
@@ -11,10 +12,17 @@ function buildHead(ob){
 }
 
 //creates header title and adds click event
-function buildHeadTitle(ob){
-    creEl(ob.type, ob.class, eval(ob.apnd), ob.inHL)
+function buildHeadEl(ob){
+    creEl(ob.type, ob.class, eval(ob.apnd), ob.inHL);
     opnPg(eval('document.getElementsByClassName(ob.class)[0]'), ob.hrf, ob.onSelf);
 }
+
+//Creates Navigation Button for mobile
+function buildNavButton(ob){
+    creEl(ob.type, ob.class, eval(ob.apnd), ob.inHL);
+    document.getElementsByClassName(ob.class)[0].addEventListener('click', function(){console.log('test')})
+}
+
 
 //creates list of links in header and adds click events
 function buildHeadLinks(ob, ob2, linkClass){
@@ -37,15 +45,16 @@ function buildHeadLinks(ob, ob2, linkClass){
         //opnPg(document.getElementsByClassName('headLinkLi')[i], ob2[i].hrf, ob2[i].onSelf)
         if(typeof(ob2[i].class) == 'string'){opnPg(document.getElementsByClassName(ob2[i].class)[i], ob2[i].hrf, ob2[i].onSelf)}
         else{opnPg(document.getElementsByClassName(ob2[i].class[0])[i], ob2[i].hrf, ob2[i].onSelf)}
-    }
-    
+    } 
 }
+
 
 
 
 
 (function initHead(){
     buildHead(headContainObj);
-    buildHeadTitle(headTitleObj);
+    buildHeadEl(headTitleObj);
+    buildNavButton(headNavBut);
     buildHeadLinks(headBaseLinkObj, headLinksObj, 'headLinkLi');
 })()
