@@ -42,7 +42,6 @@
     .headContainer{
         width: 1024px;
         margin: 0 auto;
-        background: green;
         position: relative;
     }
 
@@ -80,6 +79,40 @@
 
  }
 
+ @media only screen and (min-width: 769px) and (max-width: 1023px){
+     .headNavButton{
+         display: none;
+     }
+
+     .headTitle{
+        font-size: 52px;
+        border: 2px solid white;
+        padding: 9px 5px;
+        display: inline-block;
+        margin-top: 12px;
+        margin-left: 6px;
+    }
+
+    .headLinkUl{
+        display: inline-table;
+        position: absolute;
+        right: 0;
+        bottom: 16px;
+        margin-right: 10px;
+    }
+
+    .headLinkLiCurrent{
+        border-bottom: 2px solid white;
+    }
+
+    .headLinkLi{
+        display: inline-table;
+        font-size: 30px;
+        margin-right: 14px;
+        color: white;
+    }
+ }
+
  @media only screen and (max-width: 768px){
      .headNavButton{
          font-size: 3.5em;
@@ -115,6 +148,10 @@
          border-bottom: #797979 1px solid;
          color: rgb(219, 219, 219);
          font-size: 1.8em;
+     }
+
+     .headLinkLiCurrent{
+         background: #103253;
      }
 
      .headLinkNav:hover{

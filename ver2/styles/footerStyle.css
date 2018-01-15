@@ -2,7 +2,20 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 50px;
+    height: 90px;
     background: #444444;
     border-top: 3px solid #4065A0;
+}
+
+
+@media only screen and (min-width: 1024px){
+    .footIconContain{
+        width: 100%;
+        text-align: center;
+    }
+
+    .footIcon{
+        display: inline-block;
+        font-size: 2em;
+    }
 }
