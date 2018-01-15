@@ -98,8 +98,32 @@
          display: none;
      }
 
+     .headLinkUl{
+         margin-top: 16px;
+     }
+
      .headTitle{
          margin-top: 12px;
          margin-left: 6px;
+     }
+
+     .headLinkNav{
+         display: block;
+         width: 100%;
+         text-align: center;
+         background: #505050;
+         border-bottom: #797979 1px solid;
+         color: rgb(219, 219, 219);
+         font-size: 1.8em;
+     }
+
+     .headLinkNav:hover{
+         cursor: pointer;
+         background: #303030;
+         color: white;
+     }
+
+     .headNav{
+         padding-bottom: 136px;
      }
  }

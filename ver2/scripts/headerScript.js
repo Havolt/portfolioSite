@@ -3,7 +3,7 @@
 const headContainObj = {type: 'div', class: 'headContainer', apnd: head};
 const headTitleObj = {type: 'div', class: 'headTitle', apnd: "document.getElementsByClassName('headContainer')[0]", inHL : "MF", hrf: 'index.html', onSelf: true };
 const headBaseLinkObj = {type: 'ul', class: 'headLinkUl', apnd: "document.getElementsByClassName('headContainer')[0]"}
-const headLinksObj = []
+let headLinksObj = []
 const headNavBut = {type: 'div', class: 'headNavButton', apnd: "document.getElementsByClassName('headContainer')[0]", inHL: '&#9776;' }
 
 //Creates initial container div
@@ -20,7 +20,24 @@ function buildHeadEl(ob){
 //Creates Navigation Button for mobile
 function buildNavButton(ob){
     creEl(ob.type, ob.class, eval(ob.apnd), ob.inHL);
-    document.getElementsByClassName(ob.class)[0].addEventListener('click', function(){console.log('test')})
+    document.getElementsByClassName(ob.class)[0].addEventListener('click', function(){
+        for(let i = 0; i < headLinksObj.length; i++){
+            let navOn = false;
+            
+            for(let j = 0; j < document.getElementsByClassName('headLinkLi')[i].classList.length; j++){
+                if(document.getElementsByClassName('headLinkLi')[i].classList[j] == 'headLinkNav'){ navOn = true;}
+            }
+            if(!navOn){document.getElementsByClassName('headLinkLi')[i].classList.add('headLinkNav');
+            }else{document.getElementsByClassName('headLinkLi')[i].classList.remove('headLinkNav')}
+            
+        }
+        let headNavOn = false;
+        for(let j = 0; j < document.getElementById('head').classList.length; j++){
+            if(document.getElementById('head').classList[j] == 'headNav'){headNavOn = true}
+        }
+        if(!headNavOn){document.getElementById('head').classList.add('headNav');
+            }else{document.getElementById('head').classList.remove('headNav')}
+    })
 }
 
 
