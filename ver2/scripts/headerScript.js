@@ -58,7 +58,6 @@ function buildHeadLinks(ob, ob2, linkClass){
     }
     for(let i = 0; i < ob2.length; i++){
         creEl(ob2[i].type, ob2[i].class, eval(ob2[i].apnd), ob2[i].inHL);
-        console.log(document.getElementsByClassName('headLinkLi')[i]);
         //opnPg(document.getElementsByClassName('headLinkLi')[i], ob2[i].hrf, ob2[i].onSelf)
         if(typeof(ob2[i].class) == 'string'){opnPg(document.getElementsByClassName(ob2[i].class)[i], ob2[i].hrf, ob2[i].onSelf)}
         else{opnPg(document.getElementsByClassName(ob2[i].class[0])[i], ob2[i].hrf, ob2[i].onSelf)}
