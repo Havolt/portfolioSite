@@ -2,7 +2,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 90px;
+    height: 100px;
     background: #444444;
     border-top: 3px solid #4065A0;
 }
@@ -61,11 +61,38 @@
     }
 
     .facebookIcon:hover{
-        color: #4267B2;
+        color: rgb(94, 124, 184);
+    }
+
+    
+    .footLinkContain{
+        margin: 8px auto;
+        text-align:center;
+    }
+
+    .footLinkUl{
+        list-style: none;
+        display: inline-block;
+    }
+
+    .footLinkLi{
+        color: rgb(206, 206, 206);
+        font-size: 1.7em;
+        margin: 0 14px;
+        float: left;
+    }
+
+    .footLinkLi:hover{
+        cursor: pointer;
+        color: white;
+    }
+
+    .footLinkLiCurrent{
+        border-bottom: 4px dotted #4065A0;
     }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1023px){
+@media only screen and (min-width: 769px) and (max-width: 1024px){
 
 
 
@@ -122,14 +149,39 @@
 
     .facebookIcon:hover{
         color: #4267B2;
-    }    
+    }
+    
+    
+    .footLinkContain{
+        margin: 8px auto;
+        text-align:center;
+    }
+
+    .footLinkUl{
+        list-style: none;
+        display: inline-block;
+    }
+
+    .footLinkLi{
+        color: rgb(206, 206, 206);
+        font-size: 1.7em;
+        margin: 0 14px;
+        float: left;
+    }
+
+    .footLinkLi:hover{
+        cursor: pointer;
+        color: white;
+    }
+
+    .footLinkLiCurrent{
+        border-bottom: 4px dotted #4065A0;
+    }
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (min-width: 480px) and (max-width: 768px){
 
-    #foot{
-        height: 120px;
-    }
+    
 
 
     .footIconContain{
@@ -185,5 +237,121 @@
 
     .facebookIcon:hover{
         color: #4267B2;
-    }    
+    }
+    
+    .footLinkContain{
+        margin: 8px auto;
+        text-align:center;
+    }
+
+    .footLinkUl{
+        list-style: none;
+        display: inline-block;
+    }
+
+    .footLinkLi{
+        color: rgb(206, 206, 206);
+        font-size: 1.7em;
+        margin: 0 14px;
+        float: left;
+    }
+
+    .footLinkLi:hover{
+        cursor: pointer;
+        color: white;
+    }
+
+    .footLinkLiCurrent{
+        border-bottom: 4px dotted #4065A0;
+    }
+
+}
+
+@media only screen and (max-width: 480px){
+
+    .footIconContain{
+        margin-top: 4px;
+        width: 60%;
+        text-align: center;
+        display: flex;
+        margin: 5px auto;
+    }
+
+    .footIcon{
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 0px auto;
+    }
+
+    .footIcon:hover{
+        cursor: pointer;
+        background: white;
+    }
+
+    .gitIcon{
+        background: black;
+        color: white;
+        font-size: 2.2em;
+    }
+
+    .gitIcon:hover{
+        color: black;
+    }
+
+    .twitterIcon{
+        background: #1DA1F2;
+        color: white;
+        height: 36px;
+        padding-top: 4px;
+        font-size: 1.8em;
+    }
+
+    .twitterIcon:hover{
+        color: #1DA1F2;
+    }
+
+    .facebookIcon{
+        background: #4267B2;
+        color: white;
+        height: 36px;
+        padding-top: 4px;
+        font-size: 1.8em;
+    }
+
+    .facebookIcon:hover{
+        color: #4267B2;
+    }
+
+    #foot{
+        height: 190px;
+    }
+
+    .footLinkContain{
+        margin: 8px auto;
+        text-align:center;
+        width: 100%;
+    }
+
+    .footLinkUl{
+        list-style: none;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .footLinkLi{
+        color: rgb(206, 206, 206);
+        font-size: 1.55em;
+        margin: 2px 0;
+    }
+
+    .footLinkLi:hover{
+        cursor: pointer;
+        color: white;
+    }
+
+    .footLinkLiCurrent{
+        border-bottom: 4px dotted #4065A0;
+    }
 }

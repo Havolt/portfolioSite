@@ -40,7 +40,8 @@ function createFootLinkData(arr){
 }
 
 function createFootLinks(arr){
-    creEl('ul', 'footLinkUl', foot)
+    creEl('div', 'footLinkContain', foot)
+    creEl('ul', 'footLinkUl', document.getElementsByClassName('footLinkContain')[0])
     for(let i = 0; i < arr.length; i++){
         creEl(arr[i].type, arr[i].class, document.getElementsByClassName('footLinkUl')[0], arr[i].inHL);
         if(typeof(arr[i].class) == 'string'){
@@ -60,6 +61,5 @@ function createFootLinks(arr){
     fIconDataConstruct('facebookIcon', '<i class="fa fa-facebook"></i>', 'https://www.facebook.com/mark.fitzpatrick.545');
     createFootIcons(footIconData);
     createFootLinkData(footLinkData);
-    console.log(footLinkData)
     createFootLinks(footLinkData);
 })()
