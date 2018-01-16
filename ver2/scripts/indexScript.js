@@ -3,6 +3,7 @@ const introData = [{inHL: 'Hi, I\'m Mark a Front-end Web Developer.', type: 'div
                     {inHL: 'Experienced with GitHub, HTML, CSS, JavaScript.', type: 'div', class: 'introSecond'}];
 let portfolioData = {type: 'img', class: 'portfolioImg', src: "images/mountain.jpg" };
 let portfolioText = {type: 'div', class: 'portfolioTxt', inHL: 'Interested in seeing my projects?' }
+let portfolioButton = {type: 'div', class: 'portfolioButton', inHL: 'View Portfolio', loc : 'portfolio.html' }
 
 function createIntro(arr){
     creEl('div', 'introContain', main);
@@ -11,17 +12,21 @@ function createIntro(arr){
     }
 }
 
-function createPortfolioPrev(ob, obTxt){
+function createPortfolioPrev(ob, obTxt, obBut){
     creEl('div', 'portfolioContain', main);
     let tmpApnd = document.getElementsByClassName('portfolioContain')[0];
     portfolioData.apnd = tmpApnd;
     portfolioText.apnd = tmpApnd;
+    portfolioButton.apnd = tmpApnd;
     creEl(ob.type, ob.class, ob.apnd, '', ob.src);
-    creEl(obTxt.type, obTxt.class, obTxt.apnd, obTxt.inHL)
+    creEl(obTxt.type, obTxt.class, obTxt.apnd, obTxt.inHL);
+    creEl(obBut.type, obBut.class, obBut.apnd, obBut.inHL);
+    portfolioButton.target = document.getElementsByClassName(obBut.class)[0];
+    opnPg(obBut.target, obBut.loc, true )
 }
 
 
 (function initIndex(){
     createIntro(introData);
-    createPortfolioPrev(portfolioData, portfolioText);
+    createPortfolioPrev(portfolioData, portfolioText, portfolioButton);
 })()

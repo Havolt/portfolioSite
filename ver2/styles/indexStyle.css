@@ -2,6 +2,20 @@
     position: relative;
 }
 
+.portfolioButton{
+    padding: 7px;
+    background: #FF9814;
+    border-radius: 10px;
+    border: white 1px solid;
+    color: white; 
+}
+
+.portfolioButton:hover{
+    cursor: pointer;
+    text-shadow: 1px 1px 1px black;
+    background: rgb(219, 129, 56);
+}
+
 @media only screen and (min-width: 1024px){
 
     #main{
@@ -35,11 +49,19 @@
 
     .portfolioTxt{
         position: absolute;
-        top: 38%;
+        top: 44%;
         left: 5%;
-        font-size: 3em;
+        font-size: 3.2em;
         color: white;
         text-shadow: 2px 2px 2px #111111;
+    }
+
+    .portfolioButton{
+        position: absolute;
+        right: 15%;
+        bottom: 20%;
+        font-size: 2.2em;
+        
     }
 
 }
@@ -58,6 +80,33 @@
 
     .introMain{
         margin-bottom: 6px;
+    }
+
+    .portfolioContain{
+        width: 96%;
+        margin: 40px auto 40px;
+        position: relative;
+    }
+
+    .portfolioImg{
+        width: 100%;
+    }
+
+    .portfolioTxt{
+        position: absolute;
+        top: 44%;
+        left: 5%;
+        font-size: 4.5vw;
+        color: white;
+        text-shadow: 2px 2px 2px #111111;
+    }
+
+    .portfolioButton{
+        position: absolute;
+        right: 15%;
+        bottom: 20%;
+        font-size: 4vw;
+        
     }
 
     
@@ -80,5 +129,35 @@
 
     .introSecond{
         display: none;
+    }
+
+    .portfolioContain{
+        width: 96%;
+        margin: 40px auto 40px;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    .portfolioImg{
+        height: 380px;
+        width: auto;
+        
+    }
+
+    .portfolioTxt{
+        position: absolute;
+        top: 34%;
+        left: 5%;
+        font-size: 4.5vh;
+        color: white;
+        text-shadow: 2px 2px 2px #111111;
+    }
+
+    .portfolioButton{
+        position: absolute;
+        right: 15%;
+        bottom: 18%;
+        font-size: 3.6vh;
+        
     }
 }
