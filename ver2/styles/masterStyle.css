@@ -6,3 +6,10 @@ html, body{
 #main{
     padding-bottom: 90px;
 }
+
+@media only screen and (max-width: 768px){
+
+    #main{
+        padding-bottom: 120px;
+    }
+}

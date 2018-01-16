@@ -151,7 +151,8 @@
      }
 
      .headLinkLiCurrent{
-         background: #103253;
+         background: #344250;
+         color: rgb(230, 230, 230);
      }
 
      .headLinkNav:hover{
