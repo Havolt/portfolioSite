@@ -16,6 +16,20 @@
     background: rgb(219, 129, 56);
 }
 
+.pageLinkButton{
+    padding: 6px;
+    background: #FF9814;
+    border-radius: 10px;
+    border: white 1px solid;
+    color: white; 
+}
+
+.pageLinkButton:hover{
+    cursor: pointer;
+    text-shadow: 1px 1px 1px black;
+    background: rgb(219, 129, 56);
+}
+
 @media only screen and (min-width: 1024px){
 
     #main{
@@ -60,8 +74,53 @@
         position: absolute;
         right: 15%;
         bottom: 20%;
-        font-size: 2.2em;
+        font-size: 2.2em; 
+    }
+
+    .pageLinkContain{
+        padding-bottom: 30px;
+        width: 96%;
+        margin: 0 auto;
+        color: white;
+    }
+
+    .pageLinkDiv{
+        width: 50%;
+        display: inline-block;
+        padding-bottom: 50px;
+        position: relative;
         
+    }
+
+    .pageLinkDivAbout{
+        background: #A196DA;
+        
+    }
+
+    .pageLinkDivContact{
+        background: #87D3C6;
+    }
+
+    .pageLinkIcon{
+        margin: 16px auto;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #ececec;
+        color: black;
+        text-align: center;
+    }
+
+    .pageLinkText{
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    .pageLinkButton{
+        font-size: 1.5em;
+        position: absolute;
+        bottom: 5%;
+        right: 10%;
     }
 
 }

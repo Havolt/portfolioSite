@@ -63,7 +63,7 @@ function createMySiteLinkData(containDivClass, iconHL, textHL, buttonLoc){
 function createMySiteLink(arr){
     for(let i = 0; i < arr.length; i++){
         for(let j = 0; j < arr[i].length; j++){
-            creEl(arr[i][j].type, arr[i][j].class, document.getElementsByClassName(arr[i][j].apnd)[0], arr[i][j].inHL)
+            creEl(arr[i][j].type, arr[i][j].class, document.getElementsByClassName(arr[i][j].apnd)[0], arr[i][j].inHL);
         }
     }
 }
@@ -73,7 +73,7 @@ function createMySiteLink(arr){
     createIntro(introData);
     createPortfolioPrev(portfolioData, portfolioText, portfolioButton);
     creEl(mySiteContain.type, mySiteContain.class, mySiteContain.apnd);
-    createMySiteLinkData('pageLinkDivAbout','Hello', 'exampletextgoeshere', 'About');
-    createMySiteLinkData('pageLinkDivContact','Hello', 'exampletextgoeshere', 'Contact');
+    createMySiteLinkData('pageLinkDivAbout','<i class="fa fa-user-circle"></i>', 'exampletextgoeshere', 'About');
+    createMySiteLinkData('pageLinkDivContact','<i class="fa fa-envelope-o"></i>', 'exampletextgoeshere', 'Contact');
     createMySiteLink(mySiteLinks)
 })()
