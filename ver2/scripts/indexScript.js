@@ -3,7 +3,8 @@ const introData = [{inHL: 'Hi, I\'m Mark a Front-end Web Developer.', type: 'div
                     {inHL: 'Experienced with GitHub, HTML, CSS, JavaScript.', type: 'div', class: 'introSecond'}];
 let portfolioData = {type: 'img', class: 'portfolioImg', src: "images/mountain.jpg" };
 let portfolioText = {type: 'div', class: 'portfolioTxt', inHL: 'Interested in seeing my projects?' }
-let portfolioButton = {type: 'div', class: 'portfolioButton', inHL: 'View Portfolio', loc : 'portfolio.html' }
+let portfolioButton = {type: 'div', class: 'portfolioButton', inHL: 'View Portfolio', loc : 'portfolio.html' };
+let mySiteLinks = [[{type: 'div', class: 'pageLinkContain', apnd: main}]]
 
 function createIntro(arr){
     creEl('div', 'introContain', main);
@@ -25,8 +26,40 @@ function createPortfolioPrev(ob, obTxt, obBut){
     opnPg(obBut.target, obBut.loc, true )
 }
 
+function createMySiteLinkData(containDivClass, iconHL, textHL){
+    let myArr = [];
+    let myContain = {};
+    myContain.type = 'div';
+    myContain.class = ['pageLinkDiv'];
+    myContain.class.push(containDivClass)
+    myContain.apnd = document.getElementsByClassName(mySiteLinks[0].type);
+    myArr.push(myContain);
+    mySiteLinks.push(myArr);
+
+    //div with icon
+    let myIcon = {};
+    myIcon.type = 'div';
+    myIcon.class = 'pageLinkIcon';
+    myIcon.apnd = document.getElementsByClassName(containDivClass)[0];
+    myIcon.inHL = iconHL;
+    myArr.push(myIcon);
+    //div with text
+    let myText = {};
+    myText.type = 'div';
+    myText.class = 'pageLinkText';
+    myText.apnd = document.getElementsByClassName(containDivClass)[0];
+    myText.inHL = textHL;
+    myArr.push(myText);
+    //div with button
+}
+
+function createMySiteLink(){
+
+}
+
 
 (function initIndex(){
     createIntro(introData);
     createPortfolioPrev(portfolioData, portfolioText, portfolioButton);
+    createMySiteLinkData('pageLinkDivAbout','Hello', 'exampletextgoeshere');
 })()
