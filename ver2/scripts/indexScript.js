@@ -4,7 +4,8 @@ const introData = [{inHL: 'Hi, I\'m Mark a Front-end Web Developer.', type: 'div
 let portfolioData = {type: 'img', class: 'portfolioImg', src: "images/mountain.jpg" };
 let portfolioText = {type: 'div', class: 'portfolioTxt', inHL: 'Interested in seeing my projects?' }
 let portfolioButton = {type: 'div', class: 'portfolioButton', inHL: 'View Portfolio', loc : 'portfolio.html' };
-let mySiteLinks = [[{type: 'div', class: 'pageLinkContain', apnd: main}]]
+const mySiteContain = {type: 'div', class: 'pageLinkContain', apnd: main}
+let mySiteLinks = [];
 
 function createIntro(arr){
     creEl('div', 'introContain', main);
@@ -26,13 +27,13 @@ function createPortfolioPrev(ob, obTxt, obBut){
     opnPg(obBut.target, obBut.loc, true )
 }
 
-function createMySiteLinkData(containDivClass, iconHL, textHL){
+function createMySiteLinkData(containDivClass, iconHL, textHL, buttonLoc){
     let myArr = [];
     let myContain = {};
     myContain.type = 'div';
     myContain.class = ['pageLinkDiv'];
     myContain.class.push(containDivClass)
-    myContain.apnd = document.getElementsByClassName(mySiteLinks[0].type);
+    myContain.apnd = 'pageLinkContain';
     myArr.push(myContain);
     mySiteLinks.push(myArr);
 
@@ -40,26 +41,39 @@ function createMySiteLinkData(containDivClass, iconHL, textHL){
     let myIcon = {};
     myIcon.type = 'div';
     myIcon.class = 'pageLinkIcon';
-    myIcon.apnd = document.getElementsByClassName(containDivClass)[0];
+    myIcon.apnd = containDivClass;
     myIcon.inHL = iconHL;
     myArr.push(myIcon);
     //div with text
     let myText = {};
     myText.type = 'div';
     myText.class = 'pageLinkText';
-    myText.apnd = document.getElementsByClassName(containDivClass)[0];
+    myText.apnd = containDivClass;
     myText.inHL = textHL;
     myArr.push(myText);
     //div with button
+    let myButton = {};
+    myButton.type = 'div';
+    myButton.class = 'pageLinkButton';
+    myButton.apnd = containDivClass;
+    myButton.inHL = 'View '+ buttonLoc;
+    myArr.push(myButton);
 }
 
-function createMySiteLink(){
-
+function createMySiteLink(arr){
+    for(let i = 0; i < arr.length; i++){
+        for(let j = 0; j < arr[i].length; j++){
+            creEl(arr[i][j].type, arr[i][j].class, document.getElementsByClassName(arr[i][j].apnd)[0], arr[i][j].inHL)
+        }
+    }
 }
 
 
 (function initIndex(){
     createIntro(introData);
     createPortfolioPrev(portfolioData, portfolioText, portfolioButton);
-    createMySiteLinkData('pageLinkDivAbout','Hello', 'exampletextgoeshere');
+    creEl(mySiteContain.type, mySiteContain.class, mySiteContain.apnd);
+    createMySiteLinkData('pageLinkDivAbout','Hello', 'exampletextgoeshere', 'About');
+    createMySiteLinkData('pageLinkDivContact','Hello', 'exampletextgoeshere', 'Contact');
+    createMySiteLink(mySiteLinks)
 })()
