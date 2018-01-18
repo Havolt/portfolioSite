@@ -1,0 +1,35 @@
+@media only screen and (min-width: 1024px){
+    #main{
+        width: 1024px;
+        margin: 0 auto;
+    }
+
+    .aboutContain{
+        padding-top: 20px;
+        width: 96%;
+        margin: 0 auto;
+    }
+
+    .introContain{
+        display: block;
+        position: relative;
+    }
+
+    .introImg{
+        width: 30%;
+        border: 2px solid #4065A0;
+        display: inline-block;
+        margin-right: 24px;
+    }
+
+    .introText{
+        display: inline-block;
+        position: absolute;
+        left: 36%;
+        top: 36%;
+        width: 50%;
+        font-size: 1.2em;
+    }
+
+
+}

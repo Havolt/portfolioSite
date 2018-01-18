@@ -1,6 +1,6 @@
 const currPage = sitePages[0];
 const introData = [{inHL: 'Hi, I\'m Mark a Front-end Web Developer.', type: 'div', class: 'introMain'}, 
-                    {inHL: 'Experienced with GitHub, HTML, CSS, JavaScript.', type: 'div', class: 'introSecond'}];
+                    {inHL: 'Experienced with GitHub, HTML, CSS and JavaScript.', type: 'div', class: 'introSecond'}];
 let portfolioData = {type: 'img', class: 'portfolioImg', src: "images/mountain.jpg" };
 let portfolioText = {type: 'div', class: 'portfolioTxt', inHL: 'Interested in seeing my projects?' }
 let portfolioButton = {type: 'div', class: 'portfolioButton', inHL: 'View Portfolio', loc : 'portfolio.html' };
