@@ -1,4 +1,9 @@
 @media only screen and (min-width: 1024px){
+
+    body{
+        position: relative;
+    }
+
     #main{
         width: 1024px;
         margin: 0 auto;
@@ -29,6 +34,27 @@
         top: 36%;
         width: 50%;
         font-size: 1.2em;
+    }
+
+    .overviewContain{
+        margin: 22px auto;
+        font-size: 1.1em;
+    }
+
+    .aboutHeader{
+        text-align: center;
+        border-top: 1px solid rgb(144, 155, 172);
+        border-bottom: 1px solid rgb(144, 155, 172);
+        font-family: Helvetica, sans-serif;
+        font-size: 2.1em;
+        color: #54647c;
+        margin-bottom: 18px;
+    }
+
+    .overviewUl{
+        font-size: 1.05em;
+        margin-top: 20px;
+        margin-left: 32px;
     }
 
 
