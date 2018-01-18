@@ -15,8 +15,14 @@ let overviewData = [{type: 'div', class: 'overviewContain', apnd: 'aboutContain'
                 {type: 'li', class: 'overviewLi', apnd: 'overviewUl', inHL: 'Photoshop'},
                 {type: 'li', class: 'overviewLi', apnd: 'overviewUl', inHL: 'Flash'}];
 let skillsData = [{type: 'div', class: 'skillsContain', apnd: 'aboutContain'},
-                {type: 'div', class: 'aboutHeader', apnd: 'skillsContain', inHL: 'Skills'}]
-
+                {type: 'div', class: 'aboutHeader', apnd: 'skillsContain', inHL: 'Skills'},
+                {type: 'div', class: 'skillsText', apnd: 'skillsContain', inHL: 'I have many years of education in front-end web development, creating high quality responsive sites. My work is highly interactive due to my extensive knowledge of JavaScript.'},
+                {type: 'div', class: 'skillsText', apnd: 'skillsContain', inHL: 'In my degree I learned the fundamentals of website design. This included ways to retain user attention and create websites which draw the users eye to important details. I have also self thought myself further important front-end aspects such as complex JavaScript and creating my own responsive sites with and without the use of frameworks.'},
+                {type: 'div', class: 'skillsText', apnd: 'skillsContain', inHL: 'In my degree I also learned to use multiple graphic design applications such as Photoshop and Flash. My time in college and work experience since has helped me develop strong skills in time and project management. '}]
+let locData = [{type: 'div', class: 'locContain', apnd: 'aboutContain'},
+            {type: 'div', class: 'aboutHeader', apnd: 'locContain', inHL: 'Location'},
+            {type: 'div', class: 'locText', apnd: 'locContain', inHL: 'I am currently based in Ireland near Dublin. However I am more than open to working anywhere within Ireland or the United Kingdom and have previously worked abroad in Manchester in 2015.'},
+            {type: 'img', class: 'locPic', apnd: 'locContain', inHL: undefined, src: 'images/about/isles.jpg'} ]
 
 function createIntro(arr){
     for(let i = 0; i < arr.length; i++){
@@ -25,8 +31,10 @@ function createIntro(arr){
 }
 
 function createSection(arr){
-    for(let i = 0; i < overviewData.length; i++){
-        creEl(arr[i].type, arr[i].class, document.getElementsByClassName(arr[i].apnd)[0], arr[i].inHL);
+    for(let i = 0; i < arr.length; i++){
+        
+        creEl(arr[i].type, arr[i].class, document.getElementsByClassName(arr[i].apnd)[0], arr[i].inHL, arr[i].src);
+        
     }
 }
 
@@ -36,4 +44,5 @@ function createSection(arr){
     createIntro(introData)
     createSection(overviewData);
     createSection(skillsData);
+    createSection(locData);
 })()
