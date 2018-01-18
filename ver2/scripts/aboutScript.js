@@ -22,7 +22,11 @@ let skillsData = [{type: 'div', class: 'skillsContain', apnd: 'aboutContain'},
 let locData = [{type: 'div', class: 'locContain', apnd: 'aboutContain'},
             {type: 'div', class: 'aboutHeader', apnd: 'locContain', inHL: 'Location'},
             {type: 'div', class: 'locText', apnd: 'locContain', inHL: 'I am currently based in Ireland near Dublin. However I am more than open to working anywhere within Ireland or the United Kingdom and have previously worked abroad in Manchester in 2015.'},
-            {type: 'img', class: 'locPic', apnd: 'locContain', inHL: undefined, src: 'images/about/isles.jpg'} ]
+            {type: 'img', class: 'locPic', apnd: 'locContain', inHL: undefined, src: 'images/about/isles.jpg'}]
+let contactData = [{type: 'div', class: 'contactContain', apnd: 'aboutContain'},
+                {type: 'div', class: 'aboutHeader', apnd: 'contactContain', inHL: 'Contact'},
+                {type: 'div', class: 'contactText', apnd: 'contactContain', inHL: 'If you wish to get in contact with me for possible projects or for offers of emplyment please find the relevant information in the contact section linked below.'},
+                {type: 'div', class: 'contactButton', apnd: 'contactContain', inHL: 'View Contact Section', isButton: true, loc: 'contact'}]
 
 function createIntro(arr){
     for(let i = 0; i < arr.length; i++){
@@ -32,9 +36,8 @@ function createIntro(arr){
 
 function createSection(arr){
     for(let i = 0; i < arr.length; i++){
-        
         creEl(arr[i].type, arr[i].class, document.getElementsByClassName(arr[i].apnd)[0], arr[i].inHL, arr[i].src);
-        
+        if(arr[i].isButton){opnPg(document.getElementsByClassName(arr[i].class)[0], arr[i].loc + '.html', true )}
     }
 }
 
@@ -45,4 +48,5 @@ function createSection(arr){
     createSection(overviewData);
     createSection(skillsData);
     createSection(locData);
+    createSection(contactData);
 })()

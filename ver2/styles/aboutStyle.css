@@ -87,5 +87,27 @@
         margin-left: 70%;
     }
 
+    .contactContain{
+        margin-bottom: 100px;
+    }
+
+    .contactButton{
+        padding: 8px;
+        color: white;
+        background: #FF9814;
+        font-size: 2em;
+        display: inline-block;
+        border-radius: 10px;
+        margin-left: 60%;
+        margin-top: 20px;
+        border: 1px solid rgb(175, 175, 175);
+    }
+
+    .contactButton:hover{
+        cursor: pointer;
+        text-shadow: 1px 1px 1px rgb(94, 94, 94);
+        background: rgb(219, 129, 56);
+    }
+
 
 }
