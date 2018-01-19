@@ -19,6 +19,10 @@
     background: rgb(219, 129, 56);
 }
 
+.overviewIconContain{
+    text-align: center;
+}
+
 @media only screen and (min-width: 1024px){
 
     body{
@@ -60,6 +64,11 @@
     .overviewContain{
         margin: 22px auto;
         font-size: 1.1em;
+    }
+
+    .overviewIcon{
+        width: 50px;
+        margin: 0 50px;
     }
 
     .aboutHeader{
@@ -164,6 +173,12 @@
         font-size: 1em;
     }
 
+
+    .overviewIcon{
+        width: 44px;
+        margin: 0 50px;
+    }
+
     .aboutHeader{
         font-size: 1.7em;
     }
@@ -264,6 +279,11 @@
     .overviewContain{
         margin: 22px auto;
         font-size: 1em;
+    }
+
+    .overviewIcon{
+        width: 38px;
+        margin: 0 40px;
     }
 
     .aboutHeader{
@@ -369,6 +389,12 @@
         margin: 22px auto;
         font-size: 1em;
     }
+
+    .overviewIcon{
+        width: 34px;
+        margin: 0 28px;
+    }
+
 
     .aboutHeader{
         font-size: 1.7em;
