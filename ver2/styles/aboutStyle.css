@@ -287,7 +287,7 @@
     }
 
     .locContain{
-        margin-bottom: 30px;
+        margin-bottom: 35px;
         position: relative;
     }
 
@@ -302,7 +302,8 @@
 
     .locPic{
         display: inline-block;
-        width: 22%;
+        width: 28%;
+        margin-top: 4%;
         margin-left: 70%;
     }
 
@@ -333,13 +334,13 @@
     }
 
     #main{
-        width: 96%;
+        width: 100%;
         margin: 0 auto;
     }
 
     .aboutContain{
         padding-top: 20px;
-        width: 90%;
+        width: 95%;
         margin: 0 auto;
     }
 
@@ -349,7 +350,7 @@
     }
 
     .introImg{
-        width: 60%;
+        width: 68%;
         border: 2px solid #4065A0;
         display: block;
         margin: 0 auto;
@@ -361,7 +362,7 @@
         text-align: center;
         width: 80%;
         margin-top: 16px;
-        font-size: 1.08em;
+        font-size: 1.02em;
     }
 
     .overviewContain{
@@ -382,10 +383,11 @@
 
     .skillsContain{
         margin-bottom: 30px;
-        font-size: 1em;
+        font-size: 0.98em;
     }
 
     .skillsText{
+        margin-top: 30px;
         margin-bottom: 24px;
     }
 
@@ -396,16 +398,22 @@
 
     .locText{
         display: inline-block;
-        width: 60%;
+        width: 50%;
+        position: relative;
         left: 4%;
-        font-size: 1.03em;
+        font-size: 1em;
         top: 44%;
     }
 
     .locPic{
-        display: inline-block;
-        width: 22%;
+        margin-top: 0;
+        display: block;
+        width: 36%;
+        max-width: 126px;
+        position: absolute;
         margin-left: 70%;
+        top: 25%;
+        right: 5%;
     }
 
     .contactContain{
@@ -417,10 +425,10 @@
     }
 
     .contactButton{
-        font-size: 1.3em;
+        font-size: 1.2em;
         display: inline-block;
         border-radius: 10px;
-        margin-left: 44%;
+        margin-left: 28%;
         margin-top: 22px;
         border: 1px solid rgb(175, 175, 175);
     }
