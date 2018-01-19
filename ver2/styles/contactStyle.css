@@ -1,0 +1,30 @@
+@media only screen and (min-width: 1024px){
+    #main{
+        max-width: 1024px;
+    }
+
+    .contactImgContainer{
+        width: 100%;
+        height: 460px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .contactMainTitle{
+        position: absolute;
+        top: 4px;
+        left: 4px;
+    }
+
+    .contactMainButton{
+        position: absolute;
+        top: 4px;
+        left: 4px;
+    }
+
+    .contactMainText{
+        position: absolute;
+        top: 4px;
+        left: 4px;
+    }
+}
