@@ -13,7 +13,7 @@ let overviewData = [{type: 'div', class: 'overviewContain', apnd: 'aboutContain'
                 {type: 'li', class: 'overviewLi', apnd: 'overviewUl', inHL: 'APIs and Ajax'},
                 {type: 'li', class: 'overviewLi', apnd: 'overviewUl', inHL: 'Functional Programming'},
                 {type: 'li', class: 'overviewLi', apnd: 'overviewUl', inHL: 'Photoshop'},
-                {type: 'li', class: 'overviewLi', apnd: 'overviewUl', inHL: 'Flash'}];
+                {type: 'li', class: 'overviewLi', apnd: 'overviewUl', inHL: 'GitHub'}];
 let skillsData = [{type: 'div', class: 'skillsContain', apnd: 'aboutContain'},
                 {type: 'div', class: 'aboutHeader', apnd: 'skillsContain', inHL: 'Skills'},
                 {type: 'div', class: 'skillsText', apnd: 'skillsContain', inHL: 'I have many years of education in front-end web development, creating high quality responsive sites. My work is highly interactive due to my extensive knowledge of JavaScript.'},

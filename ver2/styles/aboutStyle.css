@@ -1,3 +1,24 @@
+.aboutHeader{
+    text-align: center;
+    border-top: 1px solid rgb(144, 155, 172);
+    border-bottom: 1px solid rgb(144, 155, 172);
+    font-family: Helvetica, sans-serif;
+    color: #54647c;
+    margin-bottom: 18px;
+}
+
+.contactButton{
+    padding: 8px;
+    color: white;
+    background: #FF9814;
+}
+
+.contactButton:hover{
+    cursor: pointer;
+    text-shadow: 1px 1px 1px rgb(94, 94, 94);
+    background: rgb(219, 129, 56);
+}
+
 @media only screen and (min-width: 1024px){
 
     body{
@@ -42,13 +63,7 @@
     }
 
     .aboutHeader{
-        text-align: center;
-        border-top: 1px solid rgb(144, 155, 172);
-        border-bottom: 1px solid rgb(144, 155, 172);
-        font-family: Helvetica, sans-serif;
         font-size: 2.1em;
-        color: #54647c;
-        margin-bottom: 18px;
     }
 
 
@@ -91,23 +106,323 @@
         margin-bottom: 100px;
     }
 
+    .contactText{
+        font-size: 1.1em;
+    }
+
     .contactButton{
-        padding: 8px;
-        color: white;
-        background: #FF9814;
         font-size: 2em;
         display: inline-block;
         border-radius: 10px;
-        margin-left: 60%;
-        margin-top: 20px;
+        margin-left: 58%;
+        margin-top: 26px;
         border: 1px solid rgb(175, 175, 175);
     }
 
-    .contactButton:hover{
-        cursor: pointer;
-        text-shadow: 1px 1px 1px rgb(94, 94, 94);
-        background: rgb(219, 129, 56);
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+
+    body{
+        position: relative;
     }
 
+    #main{
+        width: 96%;
+        margin: 0 auto;
+    }
+
+    .aboutContain{
+        padding-top: 20px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .introContain{
+        display: block;
+        position: relative;
+    }
+
+    .introImg{
+        width: 30%;
+        border: 2px solid #4065A0;
+        display: inline-block;
+        margin-right: 24px;
+    }
+
+    .introText{
+        display: inline-block;
+        position: absolute;
+        left: 36%;
+        top: 18%;
+        width: 50%;
+        font-size: 1.08em;
+    }
+
+    .overviewContain{
+        margin: 22px auto;
+        font-size: 1em;
+    }
+
+    .aboutHeader{
+        font-size: 1.7em;
+    }
+
+
+    .overviewUl{
+        font-size: 1.04em;
+        margin-top: 20px;
+        margin-left: 32px;
+    }
+
+    .skillsContain{
+        margin-bottom: 30px;
+        font-size: 1em;
+    }
+
+    .skillsText{
+        margin-bottom: 24px;
+    }
+
+    .locContain{
+        margin-bottom: 30px;
+        position: relative;
+    }
+
+    .locText{
+        display: inline-block;
+        width: 60%;
+        position: absolute;
+        left: 4%;
+        font-size: 1.03em;
+        top: 44%;
+    }
+
+    .locPic{
+        display: inline-block;
+        width: 22%;
+        margin-left: 70%;
+    }
+
+    .contactContain{
+        margin-bottom: 100px;
+    }
+
+    .contactText{
+        font-size: 1.03em;
+    }
+
+    .contactButton{
+        font-size: 1.6em;
+        display: inline-block;
+        border-radius: 10px;
+        margin-left: 58%;
+        margin-top: 40px;
+        border: 1px solid rgb(175, 175, 175);
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+
+    body{
+        position: relative;
+    }
+
+    #main{
+        width: 96%;
+        margin: 0 auto;
+    }
+
+    .aboutContain{
+        padding-top: 20px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .introContain{
+        display: block;
+        position: relative;
+    }
+
+    .introImg{
+        width: 60%;
+        border: 2px solid #4065A0;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .introText{
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        width: 80%;
+        margin-top: 16px;
+        font-size: 1.08em;
+    }
+
+    .overviewContain{
+        margin: 22px auto;
+        font-size: 1em;
+    }
+
+    .aboutHeader{
+        font-size: 1.7em;
+    }
+
+
+    .overviewUl{
+        font-size: 1.04em;
+        margin-top: 20px;
+        margin-left: 32px;
+    }
+
+    .skillsContain{
+        margin-bottom: 30px;
+        font-size: 1em;
+    }
+
+    .skillsText{
+        margin-bottom: 24px;
+    }
+
+    .locContain{
+        margin-bottom: 30px;
+        position: relative;
+    }
+
+    .locText{
+        display: inline-block;
+        width: 60%;
+        position: absolute;
+        left: 4%;
+        font-size: 1.03em;
+        top: 44%;
+    }
+
+    .locPic{
+        display: inline-block;
+        width: 22%;
+        margin-left: 70%;
+    }
+
+    .contactContain{
+        margin-bottom: 100px;
+    }
+
+    .contactText{
+        font-size: 1.03em;
+    }
+
+    .contactButton{
+        font-size: 1.3em;
+        display: inline-block;
+        border-radius: 10px;
+        margin-left: 44%;
+        margin-top: 22px;
+        border: 1px solid rgb(175, 175, 175);
+    }
+
+    
+}
+
+@media only screen and (max-width: 480px){
+
+    body{
+        position: relative;
+    }
+
+    #main{
+        width: 96%;
+        margin: 0 auto;
+    }
+
+    .aboutContain{
+        padding-top: 20px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .introContain{
+        display: block;
+        position: relative;
+    }
+
+    .introImg{
+        width: 60%;
+        border: 2px solid #4065A0;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .introText{
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        width: 80%;
+        margin-top: 16px;
+        font-size: 1.08em;
+    }
+
+    .overviewContain{
+        margin: 22px auto;
+        font-size: 1em;
+    }
+
+    .aboutHeader{
+        font-size: 1.7em;
+    }
+
+
+    .overviewUl{
+        font-size: 1.04em;
+        margin-top: 20px;
+        margin-left: 32px;
+    }
+
+    .skillsContain{
+        margin-bottom: 30px;
+        font-size: 1em;
+    }
+
+    .skillsText{
+        margin-bottom: 24px;
+    }
+
+    .locContain{
+        margin-bottom: 30px;
+        position: relative;
+    }
+
+    .locText{
+        display: inline-block;
+        width: 60%;
+        left: 4%;
+        font-size: 1.03em;
+        top: 44%;
+    }
+
+    .locPic{
+        display: inline-block;
+        width: 22%;
+        margin-left: 70%;
+    }
+
+    .contactContain{
+        margin-bottom: 100px;
+    }
+
+    .contactText{
+        font-size: 1.03em;
+    }
+
+    .contactButton{
+        font-size: 1.3em;
+        display: inline-block;
+        border-radius: 10px;
+        margin-left: 44%;
+        margin-top: 22px;
+        border: 1px solid rgb(175, 175, 175);
+    }
 
 }
