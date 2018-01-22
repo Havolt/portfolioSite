@@ -1,0 +1,36 @@
+
+.portfolioDiv:hover{
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 1024px){
+
+    #main{
+        width: 1020px;
+    }
+
+    .portfolioDiv{
+        width: 240px;
+        height: 240px;
+        background: #b6b6b6;
+        border: 5px solid #4065A0;
+        background-size: 100%;
+        position: relative;
+    }
+
+    .portfolioDivBack{
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.4);
+        position: absolute;
+    }
+
+    .portfolioTitle{
+        color: rgb(236, 236, 236);
+        text-shadow: 1px 1px 1px rgb(51, 51, 51);
+        font-size: 2.2em;
+        text-align: center;
+        margin-top: 80%;
+    }
+
+}
