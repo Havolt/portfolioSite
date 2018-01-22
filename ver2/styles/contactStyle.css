@@ -12,19 +12,42 @@
 
     .contactMainTitle{
         position: absolute;
-        top: 4px;
-        left: 4px;
+        top: 5%;
+        left: 26%;
+        font-size: 5em;
+        color: rgb(255, 255, 255);
+        text-shadow: 1px 1px 1px rgb(99, 99, 99);
     }
 
     .contactMainButton{
         position: absolute;
-        top: 4px;
-        left: 4px;
+        top: 70%;
+        left: 30%;
+        padding: 6px;
+        font-size: 3.2em;
+        background: #FF9814;
+        border-radius: 10px;
+        border: white 1px solid;
+        color: white; 
+    }
+
+    .contactMainButton:hover{
+        cursor: pointer;
+        text-shadow: 1px 1px 1px black;
+        background: rgb(219, 129, 56);
     }
 
     .contactMainText{
         position: absolute;
-        top: 4px;
-        left: 4px;
+        font-size: 1.2em;
+        width: 74%;
+        text-align: center;
+        top: 40%;
+        left: 12%;
+        color: #ffffff;
+        padding: 4px;
+        text-shadow: 1px 0px 0px #3f3f3f;
+        background: rgba(0,0,0 ,0.5)
     }
+
 }
