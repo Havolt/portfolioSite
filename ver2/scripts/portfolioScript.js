@@ -17,13 +17,26 @@ function createPreview(arr){
         creEl('div', ['portfolioDiv', arr[i].name.toLowerCase()+'Div'], document.getElementsByClassName('portfolioContain')[0]);
         document.getElementsByClassName(arr[i].name.toLowerCase()+'Div')[0].style.backgroundImage="url("+arr[i].img+")";
         creEl('div', 'portfolioDivBack',document.getElementsByClassName(arr[i].name.toLowerCase()+'Div')[0])
-        creEl('div', ['portfolioTitle', arr[i].name.toLowerCase()+'Title'],document.getElementsByClassName('portfolioDivBack')[0], arr[i].name)
+        creEl('div', ['portfolioTitle', arr[i].name.toLowerCase()+'Title'],document.getElementsByClassName('portfolioDivBack')[i], arr[i].name);
+        creEl('div', 'portfolioDesc', document.getElementsByClassName('portfolioDivBack')[i], arr[i].desc);
+        creEl('div', 'portfolioButton', document.getElementsByClassName('portfolioDivBack')[i], 'View ' + arr[i].name);
+        opnPg( document.getElementsByClassName('portfolioButton')[i],arr[i].link, true);
+
+        document.getElementsByClassName('portfolioDivBack')[i].addEventListener('mouseover', function(){
+            document.getElementsByClassName('portfolioDesc')[i].style.display="block";
+            document.getElementsByClassName('portfolioButton')[i].style.display="inline-block";
+        })
+        document.getElementsByClassName('portfolioDivBack')[i].addEventListener('mouseout', function(){
+            document.getElementsByClassName('portfolioDesc')[i].style.display="none";
+            document.getElementsByClassName('portfolioButton')[i].style.display="none";
+        })
     }
 }
 
 
 (function initPortfolio(){
-    buildPreview('Checkers', 'A two player game of checkers', 'portfolio/checkers.html', 'prev-checkers.png');
+    buildPreview('Checkers', 'A two player game of checkers', 'checkers.html', 'prev-checkers.png');
+    //buildPreview('Calculator', 'A calculator built using only JavaScript', 'portfolio/calculator.html', 'prev-calculator.png');
     createPreview(previewList);
     console.log(previewList);
 })()
