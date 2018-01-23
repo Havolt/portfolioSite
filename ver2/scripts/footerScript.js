@@ -45,15 +45,15 @@ function createFootLinks(arr){
     for(let i = 0; i < arr.length; i++){
         creEl(arr[i].type, arr[i].class, document.getElementsByClassName('footLinkUl')[0], arr[i].inHL);
         if(typeof(arr[i].class) == 'string'){
-            if(!subFolder){
-                if(sitePages[i] == 'Home'){opnPg(document.getElementsByClassName(arr[i].class)[i], 'index.html', true)}
-                else{opnPg(document.getElementsByClassName(arr[i].class)[i], sitePages[i].toLowerCase()+'.html', true)}
-            }
+            
+                if(sitePages[i] == 'Home'){opnPg(document.getElementsByClassName(arr[i].class)[i], subFolder +'index.html', true)}
+                else{opnPg(document.getElementsByClassName(arr[i].class)[i], subFolder + sitePages[i].toLowerCase()+'.html', true)}
+            
         }else{
-            if(!subFolder){
-                if(sitePages[i] == 'Home'){opnPg(document.getElementsByClassName(arr[i].class[0])[i], 'index.html', true)}
-                else{opnPg(document.getElementsByClassName(arr[i].class[0])[i], sitePages[i].toLowerCase()+'.html', true)}
-            }
+            
+                if(sitePages[i] == 'Home'){opnPg(document.getElementsByClassName(arr[i].class[0])[i], subFolder +'index.html', true)}
+                else{opnPg(document.getElementsByClassName(arr[i].class[0])[i], subFolder + sitePages[i].toLowerCase()+'.html', true)}
+            
         }
     }
 }

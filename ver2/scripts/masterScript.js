@@ -1,4 +1,4 @@
-let subFolder = false;
+let subFolder = '';
 
 
 //Function used only for creation of base divs
