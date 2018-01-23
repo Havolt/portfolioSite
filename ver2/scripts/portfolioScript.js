@@ -36,6 +36,7 @@ function createPreview(arr){
 
 (function initPortfolio(){
     buildPreview('Checkers', 'A two player game of checkers', 'checkers.html', 'prev-checkers.png');
+    buildPreview('Calculator', 'A calculator with previous input saves and user friendly input', 'calculator.html', 'prev-calculator.png');
     //buildPreview('Calculator', 'A calculator built using only JavaScript', 'portfolio/calculator.html', 'prev-calculator.png');
     createPreview(previewList);
     console.log(previewList);

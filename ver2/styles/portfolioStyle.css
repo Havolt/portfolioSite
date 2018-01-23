@@ -28,6 +28,7 @@
 
     .portfolioContain{
         width: 90%;
+        padding-top: 20px;
         margin: 0 auto;
     }
 
@@ -38,6 +39,8 @@
         border: 5px solid #4065A0;
         background-size: 100%;
         position: relative;
+        display: inline-block;
+        margin: 0 20px;
     }
 
     .portfolioDivBack{
@@ -59,7 +62,8 @@
 
     .portfolioDesc{
         text-align: center;
-        margin-top: 10%;
+        width: 96%;
+        margin:10% auto 0 auto;
         display: none;
     }
 
