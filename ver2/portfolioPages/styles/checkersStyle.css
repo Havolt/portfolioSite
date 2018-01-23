@@ -1,0 +1,47 @@
+body, html{
+  background-color: #f7f7f7;
+}
+
+#foot{
+  position:relative;
+}
+
+.portProjectApp{
+  width: 640px;
+  margin: 20px auto;
+  height: 700px;
+}
+
+.tile{
+  width: 80px;
+  height: 80px;
+  float: left;
+}
+
+.lightTile{
+  background-color: #FFCE9E;
+}
+
+.darkTile{
+  background-color: #D18B47;
+}
+
+.allPieces{
+  margin: 10px auto;
+  border: 1px solid #a39d89;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.activePiece:hover{
+  cursor: pointer;
+}
+
+.darkPieces{
+  background-color: #602a06;
+}
+
+.lightPieces{
+  background-color: #e2c7b5;
+}
