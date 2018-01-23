@@ -11,195 +11,534 @@ function projectDataInfo(title, app, desc){
 /////App data goes below here
 
 
-let boardArr = [];
-
 const tileAmt = 8;
-const initCheckerAmt = 12;
+const initPieceAmt = 12;
+let runner;
+let lightMustTake = false;
+let darkMustTake = false;
+let anotherMove = false;
 
-let lightPieces = [];
-let darkPieces = [];
-let aaaa = 'lol';
 let whiteTurn = true;
-let pieceChosen = false;
-let pieceChosenId;
-let possibleSpaces = [];
+let direction;
+let pieceSelectedBool = false;
+let pieceSelectedInfo;
 
 
-function buildBoard(holderDiv){
+//Arrays
+let boardArr = [];
+let lightArr = [];
+let darkArr = [];
+let highlightedTiles = [];
+let anotherMoveArr = [];
+let anotherMoveArrTaken = [];
+let takenPieceArr = [];
 
-  let colorBool = true;
-  let firstTime = true;
 
-  for(var i = 1; i < tileAmt+1; i++){
-    for(var j = 1; j < tileAmt+1; j++){
-      if(j == 1 && firstTime == false){
-        colorBool = !colorBool;
-      }
-      let boardSpace = {};
-      boardSpace.x = i;
-      boardSpace.y = String.fromCharCode(64+j);
-      boardSpace.tileLocation = i + String.fromCharCode(64+j);
-      boardSpace.empty = true;
-      if(colorBool == true){
-        boardSpace.color = "light";
-        colorBool = !colorBool;
-        boardSpace.legalPlay = false;
+//Creates information for objects within the boardArr array
+function createBoardArr(){
+  for(var i = tileAmt; i >= 1; i--){
+    for(var j = 1; j <= tileAmt; j++){
+      const tmpObj = new Object;
+      tmpObj.val = "tile";
+      tmpObj.empty = true;
+      tmpObj.x = i;
+      tmpObj.y = String.fromCharCode(64+j);
+      tmpObj.tileLocation = tmpObj.x + tmpObj.y;
+      if(i % 2 == 0){
+        if(j % 2 == 0){ tmpObj.color = "dark";}
+        else{ tmpObj.color = "light";}
       }else{
-        boardSpace.color = "dark";
-        colorBool = !colorBool;
-        boardSpace.legalPlay = true;
+        if(j % 2 !== 0){ tmpObj.color = "dark";}
+        else{ tmpObj.color = "light";}
       }
-      firstTime = false;
-      boardArr.push(boardSpace);
-
-      const tileMaker = document.createElement('div');
-      if(boardSpace.color == "light"){
-        tileMaker.classList += "tile lightTile";
-      }
-      else{
-        tileMaker.classList += "tile darkTile";
-      }
-      tileMaker.id = boardSpace.x + boardSpace.y;
-      holderDiv[0].appendChild(tileMaker);
-      console.log('here?')
-      //console.log(boardMaker);
+      if(tmpObj.color == "dark"){tmpObj.legalPlay = true;}
+      else{tmpObj.legalPlay = false;}
+      boardArr.push(tmpObj);
     }
   }
 }
 
-function buildPieces(color){
+//Creates both color arrays
+function createColorArr(color){
 
-  let arrRun = 0;
-  let arrRun2 = boardArr.length -1;
-
-  for(var i = 0; i < initCheckerAmt; i++){
-    const tempPiece = {};
-    tempPiece.crowned = false;
-    tempPiece.active = true;
-    if(color == 'dark'){
-      tempPiece.class = "allPieces darktPieces";
-      while(!boardArr[arrRun].legalPlay || !boardArr[arrRun].empty){
-        arrRun++;
-      }
-      tempPiece.tileLocation = boardArr[arrRun].x + boardArr[arrRun].y;
-      tempPiece.x = boardArr[arrRun].x;
-      tempPiece.y = boardArr[arrRun].y;
-      boardArr[arrRun].empty = false;
-      arrRun++;
-      darkPieces.push(tempPiece);
+  if(color == 'light'){ runner = boardArr.length-1}
+  else{ runner = 0;}
+  for(var i = 0; i < initPieceAmt; i++){
+    const tmpPce = new Object;
+    tmpPce.val = "piece";
+    tmpPce.color = color;
+    tmpPce.crowned = false;
+    while(!boardArr[runner].empty || !boardArr[runner].legalPlay){
+      if(color == 'light'){ runner--}
+      else{ runner++}
     }
-    else{
-      tempPiece.class = "allPieces lightPieces";
-      while(!boardArr[arrRun2].legalPlay || !boardArr[arrRun2].empty){
-        arrRun2--;
-      }
-      tempPiece.tileLocation = boardArr[arrRun2].x + boardArr[arrRun2].y;
-      tempPiece.x = boardArr[arrRun2].x;
-      tempPiece.y = boardArr[arrRun2].y;
-      boardArr[arrRun2].empty = false;
-      arrRun2--;
-      lightPieces.push(tempPiece);
+    tmpPce.tileLocation = boardArr[runner].tileLocation;
+    tmpPce.x = boardArr[runner].x;
+    tmpPce.y = boardArr[runner].y;
+    boardArr[runner].empty = false;
+    if(color == 'light'){ tmpPce.currPieceLight = 1; tmpPce.oppColor = darkArr; lightArr.push(tmpPce);}
+    else{ tmpPce.currPieceLight = -1; tmpPce.oppColor = lightArr; darkArr.push(tmpPce);}
+  }
+}
+
+//Creates the board from the boardArr array
+function buildBoard(){
+  for(var i = 0; i < boardArr.length; i++){
+    const deTile = document.createElement('div');
+    deTile.classList = "allTile " + boardArr[i].color+'Tile';
+    deTile.id = boardArr[i].tileLocation + "Tile";
+    app.appendChild(deTile);
+  }
+}
+
+//Places  pieces in their initials positions on board
+function initPieceLoc(arr){
+  for(var i = 0; i < arr.length; i++){
+    buildPiece(arr[i]);
+  }
+}
+
+//Function takes passed data value and turns it into pieces on board
+function buildPiece(piece){
+
+  const tmpPce = document.createElement('div');
+  tmpPce.classList = "allPiece " + piece.color + "Piece";
+  if(piece.color == 'light'){tmpPce.style.cursor="pointer"}
+  tmpPce.id = piece.tileLocation + 'Piece';
+
+  if(!anotherMove){
+    tmpPce.addEventListener('click', function(){movePiece(piece);})
+
+  }
+  else{
+    tmpPce.style.boxShadow="3px 3px 2px black";
+  }
+  if(piece.crowned){
+    tmpPce.innerHTML = "&#9813";
+  }
+  for(var i = 0; i < boardArr.length; i++){
+    if((boardArr[i].tileLocation == piece.tileLocation) && piece.color == 'light'){
+      boardArr[i].currPieceLight = 1;
     }
-  }
-}
-
-function placePieces(){
-  for(var i = 0; i < lightPieces.length; i++){
-    const lPiece = document.createElement('div');
-    lPiece.classList = "allPieces lightPieces activePiece";
-    document.getElementById(lightPieces[i].tileLocation).appendChild(lPiece);
-    lPiece.addEventListener('click', lightMove);
-
-    const dPiece = document.createElement('div');
-    dPiece.classList = 'allPieces darkPieces';
-    document.getElementById(darkPieces[i].tileLocation).appendChild(dPiece);
-  }
-
-}
-
-function highlightSpace(space, initSpace){
-
-  if(space.empty){
-    console.log(space);
-    document.getElementById(space.tileLocation).style.cursor="pointer";
-    possibleSpaces.push(document.getElementById(space.tileLocation));
-    document.getElementById(space.tileLocation).style.backgroundColor="#6283ad";
-    document.getElementById(space.tileLocation).addEventListener('click', function(){
-      moveChecker(space, initSpace)
-    });
-  }
-}
-
-function moveChecker(thisSpace, checkerLoc){
-
-
-  for(var i = 0; i < lightPieces.length; i++){
-    if(lightPieces[i].tileLocation == checkerLoc){
-      console.log(lightPieces[i]);
-      lightPieces[i].tileLocation = thisSpace.tileLocation;
-      console.log(lightPieces[i]);
-      for(var j = 0; j < possibleSpaces.length; j++){
-        document.getElementById(possibleSpaces[j].id).style.cursor="default";
-        document.getElementById(possibleSpaces[j].id).style.backgroundColor="#D18B47";
-        console.log(possibleSpaces[j].id);
-      }
-      possibleSpaces = [];
+    else if((boardArr[i].tileLocation == piece.tileLocation) && piece.color == 'dark'){
+      boardArr[i].currPieceLight = -1;
     }
   }
+  document.getElementById(piece.tileLocation+'Tile').appendChild(tmpPce);
+
 }
 
-function lightMove(event){
+//Changes object values to corresponding new position values
+function movePiece(pieceInfo){
 
-  if(!pieceChosen){
-    pieceChosen = true;
-    pieceChosenId = event.target.parentElement.id;
-    event.target.style.boxShadow='4px 4px 2px black';
-    event.target.style.margin="6px auto";
+  if(!pieceSelectedBool || pieceSelectedInfo == pieceInfo){
+    highlightMove(pieceInfo);
 
-    for(var i = 0; i < lightPieces.length; i++){
-      if(lightPieces[i].tileLocation == event.target.parentElement.id){
-        if(lightPieces[i].crowned == false){
-          for(var j = 0; j < boardArr.length; j++){
-            if((boardArr[j].x == lightPieces[i].x - 1)){
-              if(boardArr[j].y.charCodeAt(0) >= 65 && boardArr[j].y.charCodeAt(0) <= 72){
-                if(boardArr[j].y.charCodeAt(0) + 1 == lightPieces[i].y.charCodeAt(0)){
-                  highlightSpace(boardArr[j], event.target.parentElement.id);
+    if(pieceSelectedBool == false){pieceSelectedInfo = pieceInfo}
+    else{pieceSelectedInfo = undefined}
+    pieceSelectedBool = !pieceSelectedBool;
+  }
+}
 
-                }
-                else if(boardArr[j].y.charCodeAt(0) - 1 == lightPieces[i].y.charCodeAt(0)){
-                  highlightSpace(boardArr[j], event.target.parentElement.id);
-                }
+//Adds event listeners to spaces where movement is possible
+function highlightMove(pieceInfo){
+
+  let pieceToTake = false;
+  let pieceTakingDir = undefined;
+  let takenPiece = undefined;
+  let takenPiece2 = undefined;
+  if(pieceInfo.color == 'light'){ direction = 1 }
+  else{ direction = -1 }
+  if(!pieceSelectedBool){ document.getElementById(pieceInfo.tileLocation+'Piece').style.boxShadow="3px 3px 2px black" }
+  else{ document.getElementById(pieceInfo.tileLocation+'Piece').style.boxShadow="none"}
+
+  //Piece able to be taken
+
+  if((pieceInfo.color == 'light' && whiteTurn) || (pieceInfo.color =='dark' && !whiteTurn)){
+    for(var i = 0; i < boardArr.length; i++){
+
+      if((boardArr[i].x == pieceInfo.x+direction) && (boardArr[i].y.charCodeAt(0) == pieceInfo.y.charCodeAt(0)-1 ||
+       boardArr[i].y.charCodeAt(0) == pieceInfo.y.charCodeAt(0)+1) && (boardArr[i].currPieceLight == -pieceInfo.currPieceLight)){
+       if(boardArr[i].y.charCodeAt(0) < pieceInfo.y.charCodeAt(0)){pieceTakingDir = -1;}
+       else{pieceTakingDir = 1;}
+
+
+       for(var j = 0; j < boardArr.length; j++){
+         let holder = j;
+         if((boardArr[j].x == pieceInfo.x+(direction*2)) && (boardArr[j].y.charCodeAt(0) == pieceInfo.y.charCodeAt(0)+(pieceTakingDir*2)) &&
+          boardArr[j].empty){
+            for(var n = 0; n < pieceInfo.oppColor.length; n++){
+              if(boardArr[i].tileLocation == pieceInfo.oppColor[n].tileLocation){
+                takenPiece = n;
               }
-              //console.log(boardArr[j]);
+            }
+            let takenHolder = i;
+            if(!pieceSelectedBool){
+              highlightedTiles.push(boardArr[j]);
+              document.getElementById(boardArr[j].tileLocation+'Tile').style.backgroundColor="#848EA1";
+              document.getElementById(boardArr[j].tileLocation+'Tile').addEventListener('click', function(){
+                updatePiece(pieceInfo, boardArr[holder], boardArr[takenHolder], takenPiece);
+              });
+              pieceToTake = true;
+            }
+            else{
+              document.getElementById(boardArr[j].tileLocation+'Tile').style.backgroundColor="#A67D5D";
+              el = document.getElementById(boardArr[j].tileLocation+'Tile');
+              elClone = el.cloneNode(true);
+              app.replaceChild(elClone, el);
+              highlightedTiles = [];
             }
           }
         }
-        break;
+      }
+
+      /////////////////////////////////////////
+
+      if(pieceInfo.crowned){
+        if((boardArr[i].x == pieceInfo.x-direction) && (boardArr[i].y.charCodeAt(0) == pieceInfo.y.charCodeAt(0)-1 ||
+         boardArr[i].y.charCodeAt(0) == pieceInfo.y.charCodeAt(0)+1) && (boardArr[i].currPieceLight == -pieceInfo.currPieceLight)){
+           if(boardArr[i].y.charCodeAt(0) < pieceInfo.y.charCodeAt(0)){pieceTakingDir = -1;}
+           else{pieceTakingDir = 1;}
+
+
+           for(var j = 0; j < boardArr.length; j++){
+             let holder = j;
+             if((boardArr[j].x == pieceInfo.x+(-direction*2)) && (boardArr[j].y.charCodeAt(0) == pieceInfo.y.charCodeAt(0)+(pieceTakingDir*2)) &&
+              boardArr[j].empty){
+                for(var n = 0; n < pieceInfo.oppColor.length; n++){
+                  if(boardArr[i].tileLocation == pieceInfo.oppColor[n].tileLocation){
+                    takenPiece2 = n;
+                  }
+                }
+                let takenHolder = i;
+                if(!pieceSelectedBool){
+                  highlightedTiles.push(boardArr[j]);
+                  document.getElementById(boardArr[j].tileLocation+'Tile').style.backgroundColor="#848EA1";
+                  document.getElementById(boardArr[j].tileLocation+'Tile').addEventListener('click', function(){
+                    updatePiece(pieceInfo, boardArr[holder], boardArr[takenHolder], takenPiece2);
+                  });
+
+                  pieceToTake = true;
+                }
+                else{
+                  document.getElementById(boardArr[j].tileLocation+'Tile').style.backgroundColor="#A67D5D";
+                  el = document.getElementById(boardArr[j].tileLocation+'Tile');
+                  elClone = el.cloneNode(true);
+                  app.replaceChild(elClone, el);
+                  highlightedTiles = [];
+                }
+              }
+            }
+         }
       }
     }
   }
-  else if(event.target.parentElement.id == pieceChosenId){
-    event.target.style.boxShadow='none';
-    event.target.style.margin="10px auto";
-    for(var i = 0; i < possibleSpaces.length; i++){
-      possibleSpaces[i].style.backgroundColor="#D18B47";
+
+
+  //Piece unable to be taken
+    if((!pieceToTake) && (((whiteTurn && pieceInfo.color == 'light') && !lightMustTake) || ((!whiteTurn && pieceInfo.color == 'dark') && !darkMustTake ))){
+      for(var i = 0; i < boardArr.length; i++){
+        let holder = i;
+        if((boardArr[i].x == pieceInfo.x+direction) && (boardArr[i].y.charCodeAt(0) == pieceInfo.y.charCodeAt(0)-1 ||
+         boardArr[i].y.charCodeAt(0) == pieceInfo.y.charCodeAt(0)+1) && boardArr[i].empty){
+          if(!pieceSelectedBool){
+            highlightedTiles.push(boardArr[i]);
+            document.getElementById(boardArr[i].tileLocation+'Tile').style.backgroundColor="#848EA1";
+            document.getElementById(boardArr[i].tileLocation+'Tile').addEventListener('click', function(){updatePiece(pieceInfo, boardArr[holder])})
+          }else{
+            document.getElementById(boardArr[i].tileLocation+'Tile').style.backgroundColor="#A67D5D";
+            el = document.getElementById(boardArr[i].tileLocation+'Tile');
+            elClone = el.cloneNode(true);
+            app.replaceChild(elClone, el);
+            highlightedTiles = [];
+          }
+        }
+
+
+        if(pieceInfo.crowned){
+          if((boardArr[i].x == pieceInfo.x-direction) && (boardArr[i].y.charCodeAt(0) == pieceInfo.y.charCodeAt(0)-1 ||
+           boardArr[i].y.charCodeAt(0) == pieceInfo.y.charCodeAt(0)+1) && boardArr[i].empty){
+             if(!pieceSelectedBool){
+               highlightedTiles.push(boardArr[i]);
+               document.getElementById(boardArr[i].tileLocation+'Tile').style.backgroundColor="#848EA1";
+               document.getElementById(boardArr[i].tileLocation+'Tile').addEventListener('click', function(){updatePiece(pieceInfo, boardArr[holder])})
+             }else{
+               document.getElementById(boardArr[i].tileLocation+'Tile').style.backgroundColor="#A67D5D";
+               el = document.getElementById(boardArr[i].tileLocation+'Tile');
+               elClone = el.cloneNode(true);
+               app.replaceChild(elClone, el);
+               highlightedTiles = [];
+             }
+           }
+        }
+      }
     }
-    possibleSpaces = [];
-    pieceChosen = false;
+  }
+
+//Function that gets event listener places on tiles and uses it to update values for involved pieces
+function updatePiece(checkerPos, tilePos, takenPos, takeThisPiece){
+
+  anotherMove = false;
+
+  for(var i = 0; i < boardArr.length;i++){
+    if(checkerPos.tileLocation == boardArr[i].tileLocation){
+      boardArr[i].currPieceLight = 0;
+      boardArr[i].empty = true;
+    }
+  }
+
+  document.getElementById(checkerPos.tileLocation+'Tile').removeChild(document.getElementById(checkerPos.tileLocation+'Tile').childNodes[0]);
+  checkerPos.tileLocation = tilePos.tileLocation;
+  checkerPos.x = tilePos.x;
+  checkerPos.y = tilePos.y;
+
+
+  for(var i = 0; i < highlightedTiles.length; i++){
+    document.getElementById(highlightedTiles[i].tileLocation+'Tile').style.backgroundColor="#A67D5D";
+    let el = document.getElementById(highlightedTiles[i].tileLocation+'Tile');
+    let elClone = el.cloneNode(true);
+    app.replaceChild(elClone, el);
+  }
+
+  for(var i = 0; i < anotherMoveArr.length; i++){
+    document.getElementById(anotherMoveArr[i].tileLocation+'Tile').style.backgroundColor="#A67D5D";
+    let el = document.getElementById(anotherMoveArr[i].tileLocation+'Tile');
+    let elClone = el.cloneNode(true);
+    app.replaceChild(elClone, el);
+  }
+
+  if(takenPos){
+    document.getElementById(takenPos.tileLocation+'Tile').removeChild(document.getElementById(takenPos.tileLocation+'Tile').childNodes[0]);
+    takenPos.empty = true;
+    takenPos.currPieceLight = 0;
+  }
+
+  if(checkerPos.color == 'light' && checkerPos.x == 8){checkerPos.crowned = true;}
+  if(checkerPos.color == 'dark' && checkerPos.x == 1){checkerPos.crowned = true;}
+  tilePos.empty = false;
+  highlightedTiles = [];
+  anotherMoveArr = [];
+  anotherMoveArrTaken = [];
+  takenPieceArr = [];
+  pieceSelectedBool = false;
+  pieceSelectedInfo = undefined;
+
+
+
+
+  if(takenPos){
+    if(checkerPos.color == 'light'){darkArr.splice(takeThisPiece, 1);}
+    else{lightArr.splice(takeThisPiece, 1);}
+  }
+
+  if(takenPos){
+    currScan(checkerPos);
+  }
+
+  buildPiece(checkerPos);
+
+
+
+  //New Stuff
+  if(lightArr.length == 0){
+    alert('Dark Wins');
+    console.log('Dark Wins')
+  }
+  else if(darkArr.length == 0){
+    alert('Light Wins');
+    console.log('Light Wins')
+  }
+  else{
+    if(!anotherMove){
+      whiteTurn = !whiteTurn;
+      textHelp();
+      if(whiteTurn){scanner(lightArr)}
+      else{scanner(darkArr)}
+    }
+    else {
+      captureAgain(checkerPos);
+    }
+  }
+
+}
+
+//Function allows for further moves upon capture of oppenent and further captures available
+function captureAgain(piece){
+
+  for(var i = 0; i < anotherMoveArr.length; i++){
+    let tempHold = i;
+    document.getElementById(anotherMoveArr[i].tileLocation+'Tile').style.backgroundColor="#848EA1";
+    document.getElementById(anotherMoveArr[i].tileLocation+'Tile').addEventListener('click', function(){
+      updatePiece(piece, anotherMoveArr[tempHold], anotherMoveArrTaken[tempHold], takenPieceArr[tempHold]);
+    });
+    pieceToTake = true;
+  }
+
+}
+
+//Scans board for further capture after first capture
+function currScan(piece){
+
+  let pieceTakeDir2;
+  anotherMove = false;
+
+  for(var i = 0; i < boardArr.length; i++){
+    if((boardArr[i].x == piece.x+direction) && (boardArr[i].y.charCodeAt(0) == piece.y.charCodeAt(0)-1 ||
+     boardArr[i].y.charCodeAt(0) == piece.y.charCodeAt(0)+1) && (boardArr[i].currPieceLight == -piece.currPieceLight)){
+       if(boardArr[i].y.charCodeAt(0) < piece.y.charCodeAt(0)){pieceTakingDir2 = -1;}
+       else{pieceTakingDir2 = 1;}
+
+       for(var j = 0; j < boardArr.length; j++){
+
+         if((boardArr[j].x == piece.x+(direction*2)) && (boardArr[j].y.charCodeAt(0) == piece.y.charCodeAt(0)+(pieceTakingDir2*2)) &&
+          boardArr[j].empty){
+            for(var n = 0; n < piece.oppColor.length; n++){
+              if(boardArr[i].tileLocation == piece.oppColor[n].tileLocation){
+                takenPieceArr.push(n);
+              }
+            }
+
+            anotherMove = true;
+            anotherMoveArrTaken.push(boardArr[i]);
+            anotherMoveArr.push(boardArr[j]);
+          }
+       }
+
+     }
+
+     if(piece.crowned){
+       if((boardArr[i].x == piece.x-direction) && (boardArr[i].y.charCodeAt(0) == piece.y.charCodeAt(0)-1 ||
+        boardArr[i].y.charCodeAt(0) == piece.y.charCodeAt(0)+1) && (boardArr[i].currPieceLight == -piece.currPieceLight)){
+
+          if(boardArr[i].y.charCodeAt(0) < piece.y.charCodeAt(0)){pieceTakingDir2 = -1;}
+          else{pieceTakingDir2 = 1;}
+
+          for(var j = 0; j < boardArr.length; j++){
+            if((boardArr[j].x == piece.x+(-direction*2)) && (boardArr[j].y.charCodeAt(0) == piece.y.charCodeAt(0)+(pieceTakingDir2*2)) &&
+             boardArr[j].empty){
+               for(var n = 0; n < piece.oppColor.length; n++){
+                 if(boardArr[i].tileLocation == piece.oppColor[n].tileLocation){
+                   takenPieceArr.push(n);
+                 }
+               }
+
+               anotherMove = true;
+               anotherMoveArrTaken.push(boardArr[i]);
+               anotherMoveArr.push(boardArr[j]);
+             }
+          }
+        }
+     }
+  }
+}
+
+//Scans board for any available capture before movement
+function scanner(arr){
+
+  lightMustTake = false;
+  darkMustTake = false;
+
+  let direc;
+  let pieceTakingDir;
+
+  if(arr[0].color == 'light'){ direc = 1 }
+  else{ direc = -1;}
+
+  for(var a = 0; a < arr.length; a++){
+    for(var i = 0; i < boardArr.length; i++){
+
+      if((boardArr[i].x == arr[a].x+direc) && (boardArr[i].y.charCodeAt(0) == arr[a].y.charCodeAt(0)-1 ||
+       boardArr[i].y.charCodeAt(0) == arr[a].y.charCodeAt(0)+1) && (boardArr[i].currPieceLight == -arr[a].currPieceLight) ){
+         if(boardArr[i].y.charCodeAt(0) < arr[a].y.charCodeAt(0)){pieceTakingDir = -1;}
+         else{pieceTakingDir = 1;}
+
+         for(var j = 0; j < boardArr.length; j++){
+           if((boardArr[j].x == arr[a].x+(direc*2)) && (boardArr[j].y.charCodeAt(0) == arr[a].y.charCodeAt(0)+(pieceTakingDir*2)) && boardArr[j].empty){
+
+              if(arr[a].color == 'light' && boardArr[i].currPieceLight == -1){lightMustTake = true;  }
+              else if(arr[a].color == 'dark'&& boardArr[i].currPieceLight == 1){darkMustTake = true;  }
+            }
+        }
+      }
+
+      if(arr[a].crowned){
+        if((boardArr[i].x == arr[a].x-direc) && (boardArr[i].y.charCodeAt(0) == arr[a].y.charCodeAt(0)-1 ||
+         boardArr[i].y.charCodeAt(0) == arr[a].y.charCodeAt(0)+1) && (boardArr[i].currPieceLight == -arr[a].currPieceLight)){
+           if(boardArr[i].y.charCodeAt(0) < arr[a].y.charCodeAt(0)){pieceTakingDir = -1;}
+           else{pieceTakingDir = 1;}
+
+           for(var j = 0; j < boardArr.length; j++){
+             if((boardArr[j].x == arr[a].x-(direc*2)) && (boardArr[j].y.charCodeAt(0) == arr[a].y.charCodeAt(0)+(pieceTakingDir*2)) && boardArr[j].empty){
+
+               if(arr[a].color == 'light' && boardArr[i].currPieceLight == -1){lightMustTake = true;  }
+               else if(arr[a].color == 'dark'&& boardArr[i].currPieceLight == 1){darkMustTake = true; }
+
+             }
+         }
+       }
+      }
+    }
+  }
+
+  textHelp();
+}
+
+//Adds text area to body
+function textAr(){
+  const textArea1 = document.createElement('div');
+  textArea1.id = "textArea";
+  document.getElementsByClassName('portProjectApp')[0].appendChild(textArea1);
+  const textMover = document.createElement('h1');
+  textMover.id = 'textMove';
+  textArea1.appendChild(textMover);
+  const textMandatory = document.createElement('h2');
+  textMandatory.id = "textMand";
+  textArea1.appendChild(textMandatory);
+}
+
+//Changes innerHTML and style of text in text area to match checker game
+function textHelp(){
+
+  if(whiteTurn){
+    document.getElementById('textMove').innerHTML = 'Light Move';
+    document.getElementById('textMove').style.color = "white";
+
+  }
+  else{
+    document.getElementById('textMove').innerHTML = 'Dark Move';
+    document.getElementById('textMove').style.color= 'black';
+  }
+  if(lightMustTake || darkMustTake){
+    document.getElementById('textMand').innerHTML = 'Mandatory Take';
+    if(whiteTurn){
+      document.getElementById('textMand').style.color = "white";
+    }
+    else{
+      document.getElementById('textMand').style.color = "black";
+    }
+  }
+  else{
+    document.getElementById('textMand').innerHTML = '';
   }
 }
 
 
-function initApp(holderDiv){
-  buildBoard(holderDiv);
-  buildPieces('light');
-  buildPieces('dark');
-  placePieces();
-};
+//Initializes everything
+function initApp(){
+  createBoardArr();
+  createColorArr('light');
+  createColorArr('dark');
+  buildBoard();
+  initPieceLoc(lightArr);
+  initPieceLoc(darkArr);
+  textAr();
+  textHelp();
+}
+
 
 
 /////App data goes above here
 
 (function initProjectData(){
-    projectDataInfo('Checkers', initApp, 'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum');
+    projectDataInfo('Checkers', initApp, 'This is a two player checkers game that I have created purely through JavaScript. Most of the rules of checkers are present in this game such as mandatory takes and multiple jumps where available. ');
 })()

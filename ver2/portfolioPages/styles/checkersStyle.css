@@ -1,47 +1,72 @@
-body, html{
+html, body{
   background-color: #f7f7f7;
+  font-family: arial, sans-serif;
 }
 
 #foot{
-  position:relative;
+  position: relative;
 }
 
-.portProjectApp{
-  width: 640px;
+#app{
   margin: 20px auto;
-  height: 700px;
+  width: 640px;
+  height: 640px;
+  border: 5px solid #67759B;
 }
 
-.tile{
+.allTile{
   width: 80px;
   height: 80px;
   float: left;
 }
 
-.lightTile{
-  background-color: #FFCE9E;
+.portProjectApp{
+  padding-bottom: 20px;
 }
 
 .darkTile{
-  background-color: #D18B47;
+  background-color: #A67D5D;
 }
 
-.allPieces{
-  margin: 10px auto;
-  border: 1px solid #a39d89;
-  width: 60px;
-  height: 60px;
+.lightTile{
+  background-color: #E8D0AA;
+}
+
+.allPiece{
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
-}
-
-.activePiece:hover{
+  margin: 11px auto;
+  color: white;
+  font-size: 2.5em;
+  text-align: center;
   cursor: pointer;
 }
 
-.darkPieces{
-  background-color: #602a06;
+.darkPiece{
+  background-color: #512D28;
 }
 
-.lightPieces{
-  background-color: #e2c7b5;
+.lightPiece{
+  background-color: #F4C242;
+}
+
+#textArea{
+  width: 400px;
+  height: 80px;
+  background-color: #67759B;
+  margin: 14px auto;
+  border-radius: 12px;
+}
+
+#textMove{
+  padding-top: 8px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#textMand{
+  margin: 0;
+  text-align: center;
+  border-top: 1px solid #8c6343;
 }
