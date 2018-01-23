@@ -1,3 +1,5 @@
+let subFolder = false;
+
 
 //Function used only for creation of base divs
 function creBaseEl(elType, elID, appendee, innHTML, srce){

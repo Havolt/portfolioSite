@@ -6,7 +6,7 @@ function buildPreview(name, description, link, img){
     let newItem = new Object;
     newItem.name = name;
     newItem.desc = description;
-    newItem.link = 'portfolio/'+link;
+    newItem.link = 'portfolioPages/'+link;
     newItem.img = 'portfolioPages/images/'+img;
     previewList.push(newItem);
 }

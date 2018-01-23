@@ -45,11 +45,15 @@ function createFootLinks(arr){
     for(let i = 0; i < arr.length; i++){
         creEl(arr[i].type, arr[i].class, document.getElementsByClassName('footLinkUl')[0], arr[i].inHL);
         if(typeof(arr[i].class) == 'string'){
-            if(sitePages[i] == 'Home'){opnPg(document.getElementsByClassName(arr[i].class)[i], 'index.html', true)}
-            else{opnPg(document.getElementsByClassName(arr[i].class)[i], sitePages[i].toLowerCase()+'.html', true)}
+            if(!subFolder){
+                if(sitePages[i] == 'Home'){opnPg(document.getElementsByClassName(arr[i].class)[i], 'index.html', true)}
+                else{opnPg(document.getElementsByClassName(arr[i].class)[i], sitePages[i].toLowerCase()+'.html', true)}
+            }
         }else{
-            if(sitePages[i] == 'Home'){opnPg(document.getElementsByClassName(arr[i].class[0])[i], 'index.html', true)}
-            else{opnPg(document.getElementsByClassName(arr[i].class[0])[i], sitePages[i].toLowerCase()+'.html', true)}
+            if(!subFolder){
+                if(sitePages[i] == 'Home'){opnPg(document.getElementsByClassName(arr[i].class[0])[i], 'index.html', true)}
+                else{opnPg(document.getElementsByClassName(arr[i].class[0])[i], sitePages[i].toLowerCase()+'.html', true)}
+            }
         }
     }
 }
