@@ -70,3 +70,77 @@ html, body{
   text-align: center;
   border-top: 1px solid #8c6343;
 }
+
+@media only screen and (min-width: 660px) and (max-width: 1024px){
+  
+  #main{
+    width: 98%;
+    min-width: 655px;
+}
+
+.portProjectContain{
+    background: #ebebeb;
+}
+
+.portProjectTitle{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: rgb(78, 126, 153);
+    color: white;
+    font-size: 2.8em;
+    text-align: center;
+}
+
+.portProjectDesc{
+    font-size: 1.1em;
+    width: 90%;
+    margin: 30px auto 0 auto;
+    text-align: center;
+    color: rgb(53, 53, 53);
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+}
+
+@media only screen and (max-width: 660px){
+
+  body{
+    overflow-x: scroll;
+  }
+
+  #foot{
+    width: 660px;
+  }
+
+  #head{
+    width: 660px;
+  }
+
+  #main{
+    width: 98%;
+    min-width: 655px;
+}
+
+.portProjectContain{
+    background: #ebebeb;
+}
+
+.portProjectTitle{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: rgb(78, 126, 153);
+    color: white;
+    font-size: 2.8em;
+    text-align: center;
+}
+
+.portProjectDesc{
+    font-size: 1.1em;
+    width: 90%;
+    margin: 30px auto 0 auto;
+    text-align: center;
+    color: rgb(53, 53, 53);
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+}

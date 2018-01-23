@@ -51,8 +51,8 @@ function buildHeadLinks(ob, ob2, linkClass){
         else{newObj.class = 'headLinkLi';}
         newObj.apnd = "document.getElementsByClassName('headLinkUl')[0]";
         newObj.inHL = sitePages[i];
-        if(sitePages[i] == 'Home'){newObj.hrf = 'index.html'}
-        else{newObj.hrf = sitePages[i].toLowerCase() + '.html';}
+        if(sitePages[i] == 'Home'){newObj.hrf = subFolder + 'index.html'}
+        else{newObj.hrf =  subFolder + sitePages[i].toLowerCase() + '.html';}
         newObj.onSelf = true;
         ob2.push(newObj);
     }
