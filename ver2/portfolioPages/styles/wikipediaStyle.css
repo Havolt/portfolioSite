@@ -1,0 +1,172 @@
+body, html{
+    font-family: arial;
+  }
+
+  #foot{
+      position: relative;
+  }
+
+  .portProjectContain{
+      
+  }
+
+
+  #searchContainer{
+    margin: 25px auto;
+    width: 355px;
+    
+
+  }
+
+  #app{
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    margin: 0 auto;
+    min-height: 700px;
+  }
+
+  #randomButton{
+    width: 352px;
+    font-size: 12px;
+    margin: 50px auto 0 auto;
+    display: block;
+    font-size: 1em;
+    background-color: #4578cc;
+    border: 1px solid #4578cc;
+    color: white;
+  }
+
+  #randomButton:hover{
+    background-color: #ffab3d;
+    border: 1px solid #d69b5c;
+    cursor: pointer;
+  }
+
+
+  #searchButton{
+    font-size: 2em;
+    height: 100%;
+    width: 12%;
+    background-color: #4578cc;
+    color: white;
+    border: 2px solid #4578cc;
+    cursor: pointer;
+    margin-left: 4px;
+  }
+
+  #searchButton:hover{
+    background-color: #ffab3d;
+    border: 2px solid #d69b5c;
+  }
+
+  #searchBar{
+    height: 39px;
+    width: 300px;
+    border: 1px solid #96beff;
+    float: left;
+    border-radius: 2%;
+    font-size: 1.8em;
+    padding-left: 2px;
+  }
+
+  #searchBar:focus{
+    border: 2px solid #ffab3d;
+    margin-left: -1px;
+    margin-top: -1px;
+    margin-right: -1px;
+  }
+
+  #listContainer{
+    margin: 0 auto;
+  }
+
+  .listItemClass{
+    width: 99%;
+    margin: 0 auto;
+    border-radius: 1%;
+    border: 2px solid #96beff;
+    margin-bottom: 5px;
+    background-color: #f7f7f7;
+  }
+
+  .listItemClass:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #ffab3d;
+    background-color: white;
+    border: 2px solid #ffab3d;
+  }
+
+
+
+  h3{
+    margin-left: 5%;
+    font-size: 1.4em;
+  }
+
+  p{
+    font-style: italic;
+    margin-left: 2%;
+    color: #3b3f44;
+  }
+
+  @media only screen and (max-width: 1024px){
+    #main{
+        width: 99%;
+
+    }
+
+    .portProjectContain{
+        background: #ebebeb;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+
+    .portProjectTitle{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background: rgb(78, 126, 153);
+        color: white;
+        font-size: 2.8em;
+        text-align: center;
+    }
+
+    .portProjectDesc{
+        font-size: 1.1em;
+        width: 90%;
+        margin: 30px auto 0 auto;
+        text-align: center;
+        color: rgb(53, 53, 53);
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgb(212, 212, 212);
+    }
+
+  }
+
+  @media only screen and (max-width: 420px){
+
+    body{
+        overflow: auto;
+    }
+    #main{
+        width: 100%;
+
+    }
+
+    #randomButton{
+        width: 90%;
+    }
+
+    #searchContainer{
+        width: 100%;
+    }
+
+    #searchBar{
+        width: 85%;
+        margin-left: 1%;
+    }
+
+    #searchButton{
+        width: 10%;
+    }
+  }

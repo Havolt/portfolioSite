@@ -40,7 +40,8 @@ function createPreview(arr){
     buildPreview('Calculator', 'A calculator with previous input saves and user friendly input.', 'calculator.html', 'prev-calculator.png');
     buildPreview('TicTacToe', 'A game of Tic-Tac-Toe against a computer opponent.', 'tictactoe.html', 'prev-tictactoe.png');
     buildPreview('Calendar', 'A Calendar application which displays the current date and can scroll through months.', 'calendar.html', 'prev-calendar.png');
-    buildPreview('Simon', 'A digital recreation of the game Simon', 'simon.html', 'prev-simon.png')
+    buildPreview('Simon', 'A digital recreation of the game Simon', 'simon.html', 'prev-simon.png');
+    buildPreview('Wikipedia', 'Search Engine which brings back the most relevant articles.', 'wikipedia.html', 'prev-wikipedia.png');
     //buildPreview('Calculator', 'A calculator built using only JavaScript', 'portfolio/calculator.html', 'prev-calculator.png');
     createPreview(previewList);
     console.log(previewList);
