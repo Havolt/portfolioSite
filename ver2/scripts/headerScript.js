@@ -14,7 +14,7 @@ function buildHead(ob){
 //creates header title and adds click event
 function buildHeadEl(ob){
     creEl(ob.type, ob.class, eval(ob.apnd), ob.inHL);
-    opnPg(eval('document.getElementsByClassName(ob.class)[0]'), ob.hrf, ob.onSelf);
+    opnPg(eval('document.getElementsByClassName(ob.class)[0]'), subFolder + ob.hrf, ob.onSelf);
 }
 
 //Creates Navigation Button for mobile

@@ -1,0 +1,134 @@
+
+      html, body{
+        font-family: arial;
+      }
+
+      .portProjectContain{
+          padding-bottom: 20px;
+      }
+
+      #app{
+        width: 540px;
+        height: 540px;
+        border: 2px solid black;
+        margin: 20px auto;
+        border-radius: 2%;
+      }
+
+      .gridBox{
+        width: 178px;
+        height: 178px;
+        border: 1px solid black;
+        float: left;
+        border-radius: 2%;
+        text-align: center;
+        font-size: 10em;
+      }
+
+      .gridBox:hover{
+        background-color: #8dcbe8;
+        cursor: pointer;
+      }
+
+
+      .symbolPick{
+        color: white;
+        display: inline-block;
+        margin-left: 140px;
+        margin-top: 40px;
+        font-size: 5em;
+        margin-right: 2px;
+        padding-left: 4px;
+        padding-right: 4px;
+      }
+
+      .symbolPick:hover{
+        color: #d8b16e;
+        cursor: pointer;
+        margin-left: 138px;
+        margin-top: 38px;
+        text-shadow: 0 0 4px white;
+        border: 2px #d8b16e dashed;
+        margin-right: 0px;
+      }
+
+      .winStateClass{
+        width: 330px;
+        height: 330px;
+        position: absolute;
+        background-color: #1d3151;
+        border: white solid 1px;
+        border-radius: 2%;
+        margin: 80px 120px;
+      }
+
+      #retryButton{
+        color: white;
+        font-size: 1.5em;
+        border: 1px solid white;
+        padding: 4px;
+        margin: 80px 115px;
+        display: inline-block;
+        border-radius: 2%;
+      }
+
+      #retryButton:hover{
+        color: #d8b16e;
+        border: 1px solid #d8b16e;
+        cursor: pointer;
+        background-color: #345a96;
+      }
+
+      #ticTacTitle{
+        color: white;
+        text-shadow: 0 0 2px black;
+        font-size: 3.5em;
+        text-align: center;
+      }
+
+      #foot{
+        position: relative;
+    }
+
+@media only screen and (max-width: 1024px){
+    
+    #main{
+        width: 98%;
+        min-width: 560px;
+    }
+
+    #foot{
+        min-width: 560px;
+    }
+
+    #head{
+        min-width: 560px;
+    }
+
+    body{
+        overflow-x: scroll;
+    }
+
+    .portProjectContain{
+        background: #ebebeb;
+    }
+
+    .portProjectTitle{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background: rgb(78, 126, 153);
+        color: white;
+        font-size: 2.8em;
+        text-align: center;
+    }
+
+    .portProjectDesc{
+        font-size: 1.1em;
+        width: 90%;
+        margin: 30px auto 0 auto;
+        text-align: center;
+        color: rgb(53, 53, 53);
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgb(212, 212, 212);
+    }
+}
