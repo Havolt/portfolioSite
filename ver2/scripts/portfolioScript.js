@@ -2,12 +2,13 @@ const currPage = sitePages[1];
 
 let previewList = [];
 
-function buildPreview(name, description, link, img){
+function buildPreview(name, description, link, img,){
     let newItem = new Object;
     newItem.name = name;
     newItem.desc = description;
     newItem.link = 'portfolioPages/'+link;
     newItem.img = 'portfolioPages/images/'+img;
+
     previewList.push(newItem);
 }
 
@@ -39,6 +40,7 @@ function createPreview(arr){
     buildPreview('Calculator', 'A calculator with previous input saves and user friendly input.', 'calculator.html', 'prev-calculator.png');
     buildPreview('TicTacToe', 'A game of Tic-Tac-Toe against a computer opponent.', 'tictactoe.html', 'prev-tictactoe.png');
     buildPreview('Calendar', 'A Calendar application which displays the current date and can scroll through months.', 'calendar.html', 'prev-calendar.png');
+    buildPreview('Simon', 'A digital recreation of the game Simon', 'simon.html', 'prev-simon.png')
     //buildPreview('Calculator', 'A calculator built using only JavaScript', 'portfolio/calculator.html', 'prev-calculator.png');
     createPreview(previewList);
     console.log(previewList);
