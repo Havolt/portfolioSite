@@ -26,6 +26,10 @@
         width: 1020px;
     }
 
+    #foot{
+        position: relative;
+    }
+
     .portfolioContain{
         width: 90%;
         padding-top: 20px;
@@ -40,7 +44,7 @@
         background-size: 100%;
         position: relative;
         display: inline-block;
-        margin: 0 12px;
+        margin: 6px 12px;
     }
 
     .portfolioDivBack{
