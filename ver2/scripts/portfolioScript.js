@@ -42,6 +42,7 @@ function createPreview(arr){
     buildPreview('Calendar', 'A Calendar application which displays the current date and can scroll through months.', 'calendar.html', 'prev-calendar.png');
     buildPreview('Simon', 'A digital recreation of the game Simon', 'simon.html', 'prev-simon.png');
     buildPreview('Wikipedia', 'Search Engine which brings back the most relevant articles.', 'wikipedia.html', 'prev-wikipedia.png');
+    buildPreview('Snake', 'Classic game of Snake with increasing speed.', 'snake.html', 'prev-snake.png');
     //buildPreview('Calculator', 'A calculator built using only JavaScript', 'portfolio/calculator.html', 'prev-calculator.png');
     createPreview(previewList);
     console.log(previewList);
