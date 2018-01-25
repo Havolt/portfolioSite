@@ -31,6 +31,7 @@ function createPreview(arr){
             document.getElementsByClassName('portfolioDesc')[i].style.display="none";
             document.getElementsByClassName('portfolioButton')[i].style.display="none";
         })
+
     }
 }
 
