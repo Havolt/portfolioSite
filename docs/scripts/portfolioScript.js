@@ -20,7 +20,7 @@ function createPreview(arr){
         creEl('div', 'portfolioDivBack',document.getElementsByClassName(arr[i].name.toLowerCase()+'Div')[0])
         creEl('div', ['portfolioTitle', arr[i].name.toLowerCase()+'Title'],document.getElementsByClassName('portfolioDivBack')[i], arr[i].name);
         creEl('div', 'portfolioDesc', document.getElementsByClassName('portfolioDivBack')[i], arr[i].desc);
-        creEl('div', 'portfolioButton', document.getElementsByClassName('portfolioDivBack')[i], 'View ' + arr[i].name);
+        creEl('div', ['portfolioButton', 'siteButton'], document.getElementsByClassName('portfolioDivBack')[i], 'View ' + arr[i].name);
         opnPg( document.getElementsByClassName('portfolioButton')[i],arr[i].link, true);
 
         document.getElementsByClassName('portfolioDivBack')[i].addEventListener('mouseover', function(){

@@ -82,6 +82,7 @@
         font-size: 1.7em;
         margin: 0 14px;
         float: left;
+        user-select: none;
     }
 
     .footLinkLi:hover{

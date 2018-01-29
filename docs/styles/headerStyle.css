@@ -34,6 +34,7 @@
 
 .headLinkLi{
     cursor: pointer;
+    user-select: none;
 }
 
 
