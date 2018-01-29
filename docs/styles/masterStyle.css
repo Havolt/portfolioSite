@@ -21,6 +21,7 @@ body{
     padding: 8px;
     color: white;
     background: rgb(255, 151, 16);
+    background: linear-gradient(to right,  rgb(255, 150, 14) ,  rgb(230, 130, 0));
     border-radius: 14px;
 }
 
@@ -28,6 +29,7 @@ body{
     cursor: pointer;
     text-shadow: 1px 1px 1px rgb(134, 134, 134);
     background: rgb(219, 129, 56);
+    background: linear-gradient(to right, rgb(230, 130, 0)  , rgb(255, 150, 14) );
 }
 
 
