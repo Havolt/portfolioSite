@@ -17,6 +17,19 @@ body{
     min-height: 100%;
 }
 
+.siteButton{
+    padding: 8px;
+    color: white;
+    background: rgb(255, 151, 16);
+    border-radius: 14px;
+}
+
+.siteButton:hover{
+    cursor: pointer;
+    text-shadow: 1px 1px 1px rgb(134, 134, 134);
+    background: rgb(219, 129, 56);
+}
+
 
 
 #main{

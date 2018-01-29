@@ -3,7 +3,7 @@ const introData = [{inHL: 'Hi, I\'m Mark a Front-end Web Developer.', type: 'div
                     {inHL: 'Experienced with GitHub, HTML, CSS and JavaScript.', type: 'div', class: 'introSecond'}];
 let portfolioData = {type: 'img', class: 'portfolioImg', src: "images/mountain.jpg" };
 let portfolioText = {type: 'div', class: 'portfolioTxt', inHL: 'Interested in seeing my projects?' }
-let portfolioButton = {type: 'div', class: 'portfolioButton', inHL: 'View Portfolio', loc : 'portfolio.html' };
+let portfolioButton = {type: 'div', class: ['portfolioButton', 'siteButton'], inHL: 'View Portfolio', loc : 'portfolio.html' };
 const siteLinkText = {about: 'If you are interested in learning a little bit about my education and myself as a person then you should check out my about section.',
                     contact: 'If you wish to get in contact with me for potential JavaScript collaberations or other reasons then you should check out my contact section.' }
 const mySiteContain = {type: 'div', class: 'pageLinkContain', apnd: main}
@@ -25,7 +25,8 @@ function createPortfolioPrev(ob, obTxt, obBut){
     creEl(ob.type, ob.class, ob.apnd, '', ob.src);
     creEl(obTxt.type, obTxt.class, obTxt.apnd, obTxt.inHL);
     creEl(obBut.type, obBut.class, obBut.apnd, obBut.inHL);
-    portfolioButton.target = document.getElementsByClassName(obBut.class)[0];
+    portfolioButton.target = document.getElementsByClassName(obBut.class[0])[0];
+    console.log(obBut.target)
     opnPg(obBut.target, obBut.loc, true )
 }
 
@@ -57,7 +58,7 @@ function createMySiteLinkData(containDivClass, iconHL, textHL, buttonLoc){
     //div with button
     let myButton = {};
     myButton.type = 'div';
-    myButton.class = 'pageLinkButton';
+    myButton.class = ['pageLinkButton', 'siteButton'];
     myButton.apnd = containDivClass;
     myButton.inHL = 'View '+ buttonLoc;
     myButton.isButton = true;

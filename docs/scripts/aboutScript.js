@@ -1,7 +1,7 @@
 const currPage = sitePages[2];
 let introData = [{type: 'div', class: 'introContain', apnd: 'aboutContain'},
                 {type: 'img', class: 'introImg', apnd: 'introContain' , inHL: undefined, src: 'images/abtMe.jpg'},
-                {type: 'div', class: 'introText', apnd: 'introContain', inHL: 'I am a Front-end Developer and graduated in 2010 with a degree in Multimedia. I have obtained a Font-end Web Development degree from freeCodeCamp in 2017. Over the past two years I have created multiple JavaScript projects which many of can be found in my portfolio.'}]
+                {type: 'div', class: 'introText', apnd: 'introContain', inHL: 'I am a Front-end Developer and graduated in 2013 with a degree in Multimedia. I have obtained a Front-end Web Development degree from freeCodeCamp in 2017. Over the past two years I have created multiple JavaScript projects which many of can be found in my portfolio.'}]
 let overviewData = [{type: 'div', class: 'overviewContain', apnd: 'aboutContain'},
                 {type: 'div', class: 'aboutHeader', apnd: 'overviewContain', inHL: 'Outline'},
                 {type: 'div', class: 'overviewIconContain', apnd: 'overviewContain'},
@@ -30,7 +30,7 @@ let locData = [{type: 'div', class: 'locContain', apnd: 'aboutContain'},
 let contactData = [{type: 'div', class: 'contactContain', apnd: 'aboutContain'},
                 {type: 'div', class: 'aboutHeader', apnd: 'contactContain', inHL: 'Contact'},
                 {type: 'div', class: 'contactText', apnd: 'contactContain', inHL: 'If you wish to get in contact with me for possible projects or for offers of emplyment please find the relevant information in the contact section linked below.'},
-                {type: 'div', class: 'contactButton', apnd: 'contactContain', inHL: 'View Contact Section', isButton: true, loc: 'contact'}]
+                {type: 'div', class:  ['contactButton', 'siteButton'], apnd: 'contactContain', inHL: 'View Contact Section', isButton: true, loc: 'contact'}]
 
 function createIntro(arr){
     for(let i = 0; i < arr.length; i++){
