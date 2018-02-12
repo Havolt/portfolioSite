@@ -41,7 +41,7 @@ function createIntro(arr){
 function createSection(arr){
     for(let i = 0; i < arr.length; i++){
         creEl(arr[i].type, arr[i].class, document.getElementsByClassName(arr[i].apnd)[0], arr[i].inHL, arr[i].src);
-        if(arr[i].isButton){opnPg(document.getElementsByClassName(arr[i].class)[0], arr[i].loc + '.html', true )}
+        if(arr[i].isButton){ console.log(arr[i]); opnPg(document.getElementsByClassName(arr[i].class[0])[0], arr[i].loc + '.html', true )}
     }
 }
 

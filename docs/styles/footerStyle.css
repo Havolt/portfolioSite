@@ -24,7 +24,7 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        margin: 0px 24px;
+        margin: 0px 12px;
     }
 
     .footIcon:hover{
@@ -64,6 +64,18 @@
 
     .facebookIcon:hover{
         color: rgb(94, 124, 184);
+    }
+
+    .linkedinIcon{
+        background: #0077B5;
+        color: white;
+        height: 38px;
+        padding-top: 2px;
+        font-size: 1.8em;
+    }
+
+    .linkedinIcon:hover{
+        color: #0077B5;
     }
 
     
@@ -112,7 +124,7 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        margin: 0px 24px;
+        margin: 0px 12px;
     }
 
     .footIcon:hover{
@@ -152,6 +164,18 @@
 
     .facebookIcon:hover{
         color: #4267B2;
+    }
+
+    .linkedinIcon{
+        background: #0077B5;
+        color: white;
+        height: 38px;
+        padding-top: 2px;
+        font-size: 1.8em;
+    }
+
+    .linkedinIcon:hover{
+        color: #0077B5;
     }
     
     
@@ -241,6 +265,18 @@
     .facebookIcon:hover{
         color: #4267B2;
     }
+
+    .linkedinIcon{
+        background: #0077B5;
+        color: white;
+        height: 38px;
+        padding-top: 2px;
+        font-size: 1.8em;
+    }
+
+    .linkedinIcon:hover{
+        color: #0077B5;
+    }
     
     .footLinkContain{
         margin: 8px auto;
@@ -325,6 +361,18 @@
 
     .facebookIcon:hover{
         color: #4267B2;
+    }
+
+    .linkedinIcon{
+        background: #0077B5;
+        color: white;
+        height: 38px;
+        padding-top: 2px;
+        font-size: 1.8em;
+    }
+
+    .linkedinIcon:hover{
+        color: #0077B5;
     }
 
     #foot{

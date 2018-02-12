@@ -63,6 +63,7 @@ function createFootLinks(arr){
     fIconDataConstruct('gitIcon', '<i class="fa fa-github"></i>', 'https://github.com/Havolt');
     fIconDataConstruct('twitterIcon', '<i class="fa fa-twitter"></i>', 'https://twitter.com/jetsetfitz');
     fIconDataConstruct('facebookIcon', '<i class="fa fa-facebook"></i>', 'https://www.facebook.com/mark.fitzpatrick.545');
+    fIconDataConstruct('linkedinIcon', '<i class="fa fa-linkedin"></i>', 'https://www.linkedin.com/in/mark-fitzpatrick-491419100/');
     createFootIcons(footIconData);
     createFootLinkData(footLinkData);
     createFootLinks(footLinkData);
