@@ -37,6 +37,7 @@ function createPreview(arr){
 
 
 (function initPortfolio(){
+    buildPreview('Tetris', 'A remake of the classic game tetris.', 'tetris.html', 'prev-tetris.png')
     buildPreview('Checkers', 'A two player game of checkers.', 'checkers.html', 'prev-checkers.png');
     buildPreview('To-do-List', 'To-do list with the option to favourite tasks and mark as complete.', 'todo.html', 'prev-todo.png')
     buildPreview('Calculator', 'A calculator with previous input saves and user friendly input.', 'calculator.html', 'prev-calculator.png');
